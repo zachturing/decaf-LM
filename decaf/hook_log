@@ -1,0 +1,6 @@
+CreateFileW advapi32.dll, handle: 4880
+CreateFileW C:\WINDOWS\system32\DRIVERS\ACPI.sys, handle: 4880
+CreateFileW C:\WINDOWS\system32\DRIVERS\mssmbios.sys, handle: 4880
+CreateFileW C:\WINDOWS\system32\DRIVERS\ipnat.sys, handle: 4880
+CreateFileW C:\WINDOWS\System32\Drivers\HTTP.sys, handle: 4880
+CreateFileW C:\WINDOWS\system32\WBEM\Logs\wmiprov.log, handle: 4880

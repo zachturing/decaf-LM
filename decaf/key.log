@@ -1,0 +1,1 @@
+Process Read(0)/Write(1) vaddOfTaintedMem   paddrOfTaintedMem    Size   TaintInfo   CurEIP 	 ModuleName   	 CallerModuleName 	 CallerSystemCall
