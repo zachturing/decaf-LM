@@ -1,0 +1,6 @@
+#define DEFINE_INSN_BEGIN
+#define DEFINE_INSN_END
+#define DEFINE_BLOCK_BEGIN
+#define DEFINE_BLOCK_END
+#define DECAF_HOME "/home/ubuntu/MDump_lina/tonny/Y2016-Sandbox/decaf"
+#define PLUGIN_PATH "/home/ubuntu/MDump_lina/tonny/Y2016-Sandbox/decaf/plugins/Y_Sandbox"
