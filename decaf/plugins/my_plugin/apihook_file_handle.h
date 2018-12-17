@@ -1,9 +1,14 @@
 #ifndef _APIHOOK_FILE_HANDLE_H_
 #define _APIHOOK_FILE_HANDLE_H_
-
+#include <vector>
+#include <fstream>
 #include <string>
 #include <iostream>
 using namespace std;
+
+void taint_file_flush(const vector<string> &target_file);
+void read_taint_file();
+void print_vector_info();
 
 void Win_OpenFile_Ret(void* );
 void Win_OpenFile_Call(void* );

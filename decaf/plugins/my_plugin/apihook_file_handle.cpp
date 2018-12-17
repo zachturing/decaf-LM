@@ -17,18 +17,55 @@
 #include "DECAF_types.h"
 #include "config.h"
 
+#include "zk.h"
+#include "shared/tainting/taint_info.h"
+
 #include "apihook_file_handle.h"
-#include <string>
-#include <iostream>
 #include <map>
-#include <vector>
 #include <algorithm>
 using namespace std;
 
 extern map<uint32_t, string> file_map;
-extern string target_file;
 extern vector<string> vTargetFile;
 extern FILE *hook_log;
+
+void taint_file_flush(const vector<string> &target_file)
+{
+     if(!target_file.empty())
+     {
+         ofstream outfile("/home/zk/DECAF/decaf/plugins/my_plugin/taintfile.txt");  
+         for(vector<string>::iterator it = vTargetFile.begin(); it != vTargetFile.end(); ++it)
+         {
+             outfile<<*it<<endl;
+         }
+         outfile.close();         
+     }    
+}
+
+void read_taint_file()
+{
+    if(!vTargetFile.empty())
+    {
+        vTargetFile.clear();
+    }
+    ifstream infile("/home/zk/DECAF/decaf/plugins/my_plugin/taintfile.txt");
+    string line;
+    while(getline(infile, line))
+    {
+         vTargetFile.push_back(line);
+         cout<<"read_taint_file:"<<line<<endl;
+    }
+    infile.close();
+}
+
+void print_vector_info()
+{
+	cout<<"print all monitor file:"<<endl;
+	for(vector<string>::iterator it = vTargetFile.begin(); it != vTargetFile.end(); ++it)
+	{
+		cout<<*it<<endl;		
+	}
+}
 
 static uint32_t guest_wstrncpy(char *buf, size_t maxlen, gva_t vaddr) 
 {
@@ -196,7 +233,10 @@ void Win_WriteFile_Ret(void* params)
 	if(it == vTargetFile.end())  //如果被写入的文件中的内容没有打上污点标签而且还没放入监控文件队列中，将加入监控文件队列
 	{
 		vTargetFile.push_back(sFileName);
-	}
+#ifdef ZK
+                taint_file_flush(vTargetFile);     
+#endif /* ZK */	
+        }
 	uint32_t eip = DECAF_getPC(cpu_single_env);
 	uint32_t cr3 = DECAF_getPGD(cpu_single_env);
 	char name[128];
@@ -250,7 +290,7 @@ void Win_DeleteFileW_Ret(void* params)
 	DECAF_read_mem(NULL, p->_stack[1], 512, filename);
 	fprintf(hook_log, "DeleteFileW: filename %s.\n", filename);  //0528
 	fflush(hook_log);	//0528
-	//DECAF_printf("DeleteFileW: filename %s.\n", filename);
+	DECAF_printf("DeleteFileW: filename %s.\n", filename);
 	hookapi_remove_hook(p->_handle);
 	delete p;
 	p = NULL;
@@ -301,7 +341,21 @@ void Win_MoveFileAll_Ret(void* opaque)
 			//DECAF_printf("Process %s in function %s:change the file name to %s\n", name, p->_funcname.c_str(), sNewFileName);
 		}
 
-		//cout<<"================"<<endl;
+#ifdef ZK
+               taint_file_flush(vTargetFile);
+               //int i = 0;
+               //for(; i < tf.mLen; ++i)
+               //{
+              //     if(strcmp(tf.mTaintFiles[i], sExistingFileName) == 0)
+               //    {
+               //        strcpy(tf.mTaintFiles[i], sNewFileName);
+                //       break;  
+                 //  }  
+              // }
+
+#endif /* ZK */
+                
+//cout<<"================"<<endl;
 
 	}	
 	else

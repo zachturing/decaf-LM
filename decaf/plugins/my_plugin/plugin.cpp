@@ -61,7 +61,6 @@ char targetname[512];
 
 map<uint32_t, string> file_map;		//在文件句柄和文件名之间建立对应关系
 vector<string> vTargetFile;  		//存放要监控的文件名
-string target_file = "data.txt";
 
 //存放日志文件的文件指针
 FILE *keylogger_log    = DECAF_NULL_HANDLE;
@@ -113,15 +112,7 @@ static void removeproc_callback(VMI_Callback_Params* params)
 
 void plugin_cleanup()
 {
-	DECAF_printf("All monitor file:\n");  
-
-	//输出所有的被监控文件的文件名
-	for(vector<string>::iterator it = vTargetFile.begin(); it != vTargetFile.end(); ++it)
-	{
-		DECAF_printf("%s\n", it->c_str());
-	}
-	DECAF_printf("=========================================\n");
-
+	print_vector_info();
 	keylogger_cleanup();  //注销keylogger相关资源
 
 	nic_cleanup();		  //注销nic相关资源
@@ -133,7 +124,7 @@ void plugin_cleanup()
 		fclose(hook_log);
 		hook_log = NULL;
 	}
-
+  
 	if(processbegin_handle != DECAF_NULL_HANDLE)
 	{
 		VMI_unregister_callback(VMI_CREATEPROC_CB, processbegin_handle);
@@ -160,6 +151,9 @@ static int my_plugin_init(void)
 	DECAF_output_init(NULL);
 	DECAF_printf("Hello World\n");
 	hook_log = fopen("hook_log", "w");
+        
+    read_taint_file();  //从文件中读取敏感文件集        
+ 
 	if(!hook_log)
 	{
 		DECAF_printf("the hook_log can not be open or created !!.\n");
@@ -181,8 +175,7 @@ plugin_interface_t* init_plugin(void)
 	plugin_interface.plugin_cleanup = &plugin_cleanup;
 
 	my_plugin_init();
-	vTargetFile.push_back(target_file);
-	PrintInfo();
+//	PrintInfo();
 	return (&plugin_interface);
 }
 

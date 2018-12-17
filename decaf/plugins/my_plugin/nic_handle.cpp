@@ -41,16 +41,6 @@ extern DECAF_Handle nic_rec_cb_handle;
 extern DECAF_Handle nic_send_cb_handle;
 extern FILE *nic_log;
 
-//测试函数
-void PrintInfo()
-{
-	cout<<"call PrintInfo."<<endl;
-	for(vector<string>::iterator it = vTargetFile.begin(); it!= vTargetFile.end(); ++it)
-	{
-		cout<<it->c_str()<<endl;
-	}
-}
-
 static int nic_check_virtmem(const uint32_t addr, const int size)
 {
 	uint8_t *taint_flag = new uint8_t[size];
