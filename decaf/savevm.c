@@ -94,6 +94,8 @@ extern void get_taint_info();
 extern int set_taint_info(const uint32_t middle_index, const uint32_t leaf_index, const uint32_t bitmap_index);
 
 extern TaintInfo_t tf;
+
+#define MAX_PATH_LEN 257
 #endif /* ZK */
 
 #define SELF_ANNOUNCE_ROUNDS 5
@@ -1501,9 +1503,16 @@ static void vmstate_save(QEMUFile *f, SaveStateEntry *se)
 #define QEMU_VM_SUBSECTION           0x05
 
 #ifdef ZK
+//shadow memory info
     #define QEMU_VM_TAINTINFO_START 0x06
     #define QEMU_VM_TAINTINFO_PART  0x07
     #define QEMU_VM_TAINTINFO_END   0x08
+
+//taint file info
+    #define QEMU_VM_TAINTFILE_START 0x09
+    #define QEMU_VM_TAINTFILE_PART  0X10
+    #define QEMU_VM_TAINTFILE_END   0X11 
+
 #endif
 bool qemu_savevm_state_blocked(Monitor *mon)
 {
@@ -1536,6 +1545,7 @@ int qemu_savevm_state_begin(Monitor *mon, QEMUFile *f, int blk_enable,
     qemu_put_be32(f, QEMU_VM_FILE_VERSION);
 
 #ifdef ZK
+//write shadow memory info to QEMUFile
     qemu_put_be32(f, QEMU_VM_TAINTINFO_START);
     get_taint_info();      
     int size = tf.mLen;
@@ -1548,10 +1558,30 @@ int qemu_savevm_state_begin(Monitor *mon, QEMUFile *f, int blk_enable,
         qemu_put_be32(f, tf.mTaintInfo[i].mMiddleIndex);
         qemu_put_be32(f, tf.mTaintInfo[i].mLeafIndex);
         qemu_put_be32(f, tf.mTaintInfo[i].mBitmapIndex);
-        //int len = sizeof(TaintInfoItem_t);
-	//qemu_put_buffer(f, (uint8_t*)(tf.mTaintInfo + i), len);
     }
     qemu_put_be32(f, QEMU_VM_TAINTINFO_END);
+
+//write taint file info to QEMUFile
+    FILE *fp = NULL;
+	if((fp = fopen("/home/zk/DECAF/decaf/plugins/my_plugin/taintfile.txt", "r")) == NULL)
+	{
+		printf("open file failed.\n");
+		return -1;
+	}
+	char path[MAX_PATH_LEN] = "";
+
+	qemu_put_be32(f, QEMU_VM_TAINTFILE_START);
+	while(fgets(path, MAX_PATH_LEN, fp) != NULL)
+	{
+		qemu_put_be32(f, QEMU_VM_TAINTFILE_PART);
+		printf("transfer file name:%s\n", path);
+        int len = strlen(path);
+		qemu_put_byte(f, len);
+		qemu_put_buffer(f, (uint8_t*)path, len);
+
+	}
+	qemu_put_be32(f, QEMU_VM_TAINTFILE_END);
+	fclose(fp);
 #endif   /* ZK */
 
 
@@ -1839,6 +1869,7 @@ int qemu_loadvm_state(QEMUFile *f)
         return -ENOTSUP;
 
 #ifdef ZK
+//read shadow memory info from QEMUFile
     v = qemu_get_be32(f);
     if(v != QEMU_VM_TAINTINFO_START)
     {
@@ -1853,10 +1884,33 @@ int qemu_loadvm_state(QEMUFile *f)
         uint32_t bitmap_index  = qemu_get_be32(f);
         printf("(m, l, b):%d, %d, %d.\n", middle_index, leaf_index, bitmap_index);
         set_taint_info(middle_index, leaf_index, bitmap_index); 
-        //int len = sizeof(TaintInfoItem_t);
-	//qemu_get_buffer(f, (uint8_t*)(tf.mTaintInfo + tf.mLen), len);
     }
 
+//read taint file info form QEMUFile
+	v = qemu_get_be32(f);
+	if(v != QEMU_VM_TAINTFILE_START)
+	{
+		return -EINVAL;
+	}
+
+	FILE *fp = NULL;
+	char path[MAX_PATH_LEN];
+
+	if((fp = fopen("/home/zk/DECAF/decaf/plugins/my_plugin/taintfile.txt", "w")) == NULL)
+	{
+		printf("loadvm: open file failed.\n");
+		return -EINVAL;
+	}
+	
+	while((section_type = qemu_get_be32(f)) != QEMU_VM_TAINTFILE_END)
+	{
+		int len = qemu_get_byte(f); //get filename length
+		qemu_get_buffer(f, (uint8_t*)path, len);
+		path[len] = 0;
+		fputs(path, fp);
+		printf("receive file name:%s\n", path);
+	}
+	fclose(fp);
 #endif // ZK
 
     while ((section_type = qemu_get_byte(f)) != QEMU_VM_EOF) {
