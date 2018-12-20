@@ -10,6 +10,7 @@
 #include "shared/tainting/taint_info.h"
 #include "zk.h"
 
+extern bool migrate_complete;
 #ifdef CONFIG_TCG_TAINT
 
 /* Track whether the taint tracking system is enabled or not */
@@ -196,7 +197,18 @@ void garbage_collect_taint(int flag) {
       }
     } // if middle_node
   } // End for loop
+#ifdef ZK
+	if(!migrate_complete)
+	{
+#endif /* ZK */
   DECAF_start_vm();
+#ifdef ZK
+	}
+	else
+	{
+		printf("migrate completed.\n");
+	}
+#endif /* ZK */
 }
 
 static void empty_taint_memory_page_table(void) {

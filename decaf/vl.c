@@ -170,6 +170,11 @@ int main(int argc, char **argv)
 //#define DEBUG_NET
 //#define DEBUG_SLIRP
 
+#ifdef ZK
+bool migrate_complete = false;
+#endif /* ZK */
+
+
 #define DEFAULT_RAM_SIZE 128
 
 #define MAX_VIRTIO_CONSOLES 1
@@ -406,8 +411,9 @@ void runstate_set(RunState new_state)
 {
     assert(new_state < RUN_STATE_MAX);
 #ifdef ZK
-  //  printf("current_run_state:%s.\n", RunState_lookup[current_run_state]);
-  //  printf("new state:%s.\n", RunState_lookup[new_state]);
+  RunState tmp_run_state = current_run_state;
+  RunState tmp_new_state = new_state;
+  
 #endif
     if (!runstate_valid_transitions[current_run_state][new_state]) {
         fprintf(stderr, "ERROR: invalid runstate transition: '%s' -> '%s'\n",
@@ -417,6 +423,16 @@ void runstate_set(RunState new_state)
     }
 
     current_run_state = new_state;
+#ifdef ZK
+    if((tmp_run_state == RUN_STATE_POSTMIGRATE) && (tmp_new_state == RUN_STATE_RUNNING))
+	{
+
+    printf("current_run_state:%s.\n", RunState_lookup[current_run_state]);
+    printf("new state:%s.\n", RunState_lookup[new_state]);
+		printf("tmp ...\n");
+        migrate_complete = true;
+	}
+#endif /* ZK */
 }
 
 int runstate_is_running(void)
