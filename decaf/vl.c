@@ -426,11 +426,9 @@ void runstate_set(RunState new_state)
 #ifdef ZK
     if((tmp_run_state == RUN_STATE_POSTMIGRATE) && (tmp_new_state == RUN_STATE_RUNNING))
 	{
-
-    printf("current_run_state:%s.\n", RunState_lookup[current_run_state]);
-    printf("new state:%s.\n", RunState_lookup[new_state]);
-		printf("tmp ...\n");
-        migrate_complete = true;
+        printf("current_run_state:%s.\n", RunState_lookup[current_run_state]);
+        printf("new state:%s.\n", RunState_lookup[new_state]);
+		migrate_complete = true;
 	}
 #endif /* ZK */
 }

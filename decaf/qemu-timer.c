@@ -29,6 +29,9 @@
 
 #include "hw/hw.h"
 
+#include "zk.h"
+
+
 #include <unistd.h>
 #include <fcntl.h>
 #include <time.h>

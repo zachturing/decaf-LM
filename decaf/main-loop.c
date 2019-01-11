@@ -26,7 +26,7 @@
 #include "qemu-timer.h"
 #include "slirp/slirp.h"
 #include "main-loop.h"
-
+#include "zk.h"
 #ifndef _WIN32
 
 #include "compatfd.h"
@@ -430,9 +430,11 @@ int main_loop_wait(int nonblocking)
         timeout = qemu_calculate_timeout();
         qemu_bh_update_timeout(&timeout);
     }
+#ifdef ZK
+//	printf("timeout = %d\n", timeout);
+#endif /* ZK */
 
     os_host_main_loop_wait(&timeout);
-
     tv.tv_sec = timeout / 1000;
     tv.tv_usec = (timeout % 1000) * 1000;
 

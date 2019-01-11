@@ -577,8 +577,7 @@ void check_unresolved_hooks()
                 }
                 hookapi_insert(iter->record); 
 
-		monitor_printf(default_mon, "Hooking %s::%s at 0x%08x\n",
-				iter->module.c_str(), iter->function.c_str(), pc);
+		//monitor_printf(default_mon, "Hooking %s::%s at 0x%08x\n",	iter->module.c_str(), iter->function.c_str(), pc);
 //LOK: We can still just do an erase here since the remove will free the record
 		iter = fun_to_hook.erase(iter);
 		iter--;
@@ -591,11 +590,11 @@ uintptr_t hookapi_hook_function_byname(const char *mod_name, const char *fun_nam
 {
   target_ulong pc = funcmap_get_pc(mod_name, fun_name, cr3);
   if (pc == 0) {
-    printf("Deferring hooking of %s::%s\n", mod_name, fun_name);
+    //printf("Deferring hooking of %s::%s\n", mod_name, fun_name);
     return (add_unresolved_hook(mod_name, fun_name, fnhook, is_global, cr3, opaque, sizeof_opaque));
   }
   else {
-    printf("Hooking %s::%s @ 0x%x\n", mod_name, fun_name, pc);
+    //printf("Hooking %s::%s @ 0x%x\n", mod_name, fun_name, pc);
     return (hookapi_hook_function(is_global, pc, cr3, fnhook, opaque, sizeof_opaque));
   }
 }

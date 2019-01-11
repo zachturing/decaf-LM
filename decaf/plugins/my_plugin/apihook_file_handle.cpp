@@ -112,9 +112,9 @@ void Win_OpenFile_Ret(void* params)
 	if(hfile)
 	{
 		file_map[hfile] = sFileName;  //记录文件句柄对应的文件名
-		fprintf(hook_log, "OpenFile %s, handle: %d\n", sFileName.c_str(), hfile);
-		fflush(hook_log);
-		//DECAF_printf("OpenFile %s, handle: %d\n", sFileName.c_str(), hfile);
+		//fprintf(hook_log, "OpenFile %s, handle: %d\n", sFileName.c_str(), hfile);
+		//fflush(hook_log);
+		DECAF_printf("OpenFile %s, handle: %d\n", sFileName.c_str(), hfile);
 	}
 	hookapi_remove_hook(p->_handle);
 	delete p;
@@ -138,9 +138,9 @@ void Win_CreateFileW_Ret(void* params)
 	if(file_handle)
 	{
 		file_map[file_handle] = sFileName; //记录文件句柄对应的文件名
-		fprintf(hook_log, "CreateFileW %s, handle: %d\n", sFileName.c_str(), file_handle);
-		fflush(hook_log);
-		//DECAF_printf("CreateFileW %s, handle: %d\n", sFileName.c_str(), file_handle);
+		//fprintf(hook_log, "CreateFileW %s, handle: %d\n", sFileName.c_str(), file_handle);
+		//fflush(hook_log);
+		DECAF_printf("CreateFileW %s, handle: %d\n", sFileName.c_str(), file_handle);
 	}
 
 	hookapi_remove_hook(p->_handle);
@@ -163,9 +163,9 @@ void Win_CreateFileA_Ret(void* params)
 	if(file_handle)
 	{
 		file_map[file_handle] = sFileName;  //记录文件句柄对应的文件名	
-		fprintf(hook_log, "CreateFileW %s, handle: %d\n", sFileName.c_str(), file_handle);
-		fflush(hook_log);
-		//DECAF_printf("CreateFileW %s, handle: %d\n", sFileName.c_str(), file_handle);
+		//fprintf(hook_log, "CreateFileW %s, handle: %d\n", sFileName.c_str(), file_handle);
+		//fflush(hook_log);
+		DECAF_printf("CreateFileW %s, handle: %d\n", sFileName.c_str(), file_handle);
 	}
 	hookapi_remove_hook(p->_handle);
 	delete p;
@@ -185,8 +185,8 @@ void Win_ReadFile_Ret(void* params)
 	uint32_t bytes_read = 0;
 	DECAF_read_mem(NULL, p->_stack[4], 4, &bytes_read);
 
-	fprintf(hook_log, "ReadFile: filename %s %d bytes.\n", sFileName.c_str(), bytes_read);
-	//DECAF_printf("ReadFile: filename %s %d bytes.\n", sFileName.c_str(), bytes_read);
+	//fprintf(hook_log, "ReadFile: filename %s %d bytes.\n", sFileName.c_str(), bytes_read);
+	DECAF_printf("ReadFile: filename %s %d bytes.\n", sFileName.c_str(), bytes_read);
 
 	for(vector<string>::iterator it = vTargetFile.begin(); it != vTargetFile.end(); ++it)
 	{
@@ -200,13 +200,13 @@ void Win_ReadFile_Ret(void* params)
 			taint_flag = NULL;
 
 			int taint_bytes = check_virtmem(p->_stack[2], p->_stack[3]);
-			fprintf(hook_log, "ReadFile: read content tainted %d bytes.\n", bytes_read); //0528
+			//fprintf(hook_log, "ReadFile: read content tainted %d bytes.\n", bytes_read); //0528
 			
-			//DECAF_printf("ReadFile: read content tainted %d bytes.\n", bytes_read);
+			DECAF_printf("ReadFile: read content tainted %d bytes.\n", bytes_read);
 			break;
 		}
 	}
-	fflush(hook_log);   //0528
+	//fflush(hook_log);   //0528
 
 	hookapi_remove_hook(p->_handle);
 	delete p;
@@ -248,11 +248,9 @@ void Win_WriteFile_Ret(void* params)
 	}
 	if(taint_bytes) 
 	{
-		fprintf(hook_log, "Process %s WriteFile: filename=%s write %d bytes tainted memory!\n", 
-			name, sFileName.c_str(), taint_bytes);   //0528
-		fflush(hook_log);		//0528
-		//DECAF_printf("Process %s WriteFile: filename=%s write %d bytes tainted memory!\n", 
-		//	name, sFileName.c_str(), taint_bytes);
+		//fprintf(hook_log, "Process %s WriteFile: filename=%s write %d bytes tainted memory!\n", name, sFileName.c_str(), taint_bytes);   //0528
+		//fflush(hook_log);		//0528
+		DECAF_printf("Process %s WriteFile: filename=%s write %d bytes tainted memory!\n", name, sFileName.c_str(), taint_bytes);
 	}
 	hookapi_remove_hook(p->_handle);
 	delete p;
@@ -270,9 +268,9 @@ void Win_DeleteFileA_Ret(void* params)
 	char tmp[256];
 	DECAF_read_mem(NULL, p->_stack[1], 256, tmp);
 	string sFileName(tmp);
-	fprintf(hook_log, "DeleteFileA: filename %s.\n", sFileName.c_str());  //0528
-	fflush(hook_log);	//0528
-	//DECAF_printf("DeleteFileA: filename %s.\n", sFileName.c_str());
+	//fprintf(hook_log, "DeleteFileA: filename %s.\n", sFileName.c_str());  //0528
+	//fflush(hook_log);	//0528
+	DECAF_printf("DeleteFileA: filename %s.\n", sFileName.c_str());
 	hookapi_remove_hook(p->_handle);
 	delete p;
 	p = NULL;
@@ -287,10 +285,12 @@ void Win_DeleteFileW_Ret(void* params)
 {
 	CDeleteFile *p = (CDeleteFile*)params;
 	char filename[256];
-	DECAF_read_mem(NULL, p->_stack[1], 512, filename);
-	fprintf(hook_log, "DeleteFileW: filename %s.\n", filename);  //0528
-	fflush(hook_log);	//0528
-	DECAF_printf("DeleteFileW: filename %s.\n", filename);
+	guest_wstrncpy(filename, 256, p->_stack[1]);
+	string sFileName(filename);
+	//DECAF_read_mem(NULL, p->_stack[1], 256 , filename);
+	//fprintf(hook_log, "DeleteFileW: filename %s.\n", filename);  //0528
+	//fflush(hook_log);	//0528
+	DECAF_printf("DeleteFileW: filename %s.\n", sFileName.c_str());
 	hookapi_remove_hook(p->_handle);
 	delete p;
 	p = NULL;
@@ -310,16 +310,16 @@ void Win_MoveFileAll_Ret(void* opaque)
 	DECAF_read_mem(NULL, p->_stack[2], 256, sNewFileName);
 	
 	DECAF_printf("%s\n", p->_funcname.c_str());
-	fprintf(hook_log, "Existing file name:%s\n", sExistingFileName);  //0528
-	fprintf(hook_log, "New file name:%s\n", sNewFileName);			  //0528
-	//DECAF_printf("Existing file name:%s\n", sExistingFileName);
-	//DECAF_printf("New file name:%s\n", sNewFileName);
+	//fprintf(hook_log, "Existing file name:%s\n", sExistingFileName);  //0528
+	//fprintf(hook_log, "New file name:%s\n", sNewFileName);			  //0528
+	DECAF_printf("Existing file name:%s\n", sExistingFileName);
+	DECAF_printf("New file name:%s\n", sNewFileName);
 
 	vector<string>::iterator it = find(vTargetFile.begin(), vTargetFile.end(), sExistingFileName);
 
 	if(vTargetFile.end() != it)  //重命名了监控的目标文件
 	{
-		fprintf(hook_log, "========================\n");	//0528
+		//fprintf(hook_log, "========================\n");	//0528
 		//cout<<"================"<<endl;
 		*it = sNewFileName;   //对于改名，直接替换原来的文件名
 		//DECAF_printf("New target file name:%s\n", it->c_str());
@@ -335,10 +335,10 @@ void Win_MoveFileAll_Ret(void* opaque)
 		}
 		else
 		{	
-			fprintf(hook_log,  "module name:%s\n", dm.name);  //0528
-			fprintf(hook_log, "Process %s in function %s:change the file name to %s\n", name, p->_funcname.c_str(), sNewFileName); //0528
-			//DECAF_printf("module name:%s\n", dm.name);
-			//DECAF_printf("Process %s in function %s:change the file name to %s\n", name, p->_funcname.c_str(), sNewFileName);
+			//fprintf(hook_log,  "module name:%s\n", dm.name);  //0528
+			//fprintf(hook_log, "Process %s in function %s:change the file name to %s\n", name, p->_funcname.c_str(), sNewFileName); //0528
+			DECAF_printf("module name:%s\n", dm.name);
+			DECAF_printf("Process %s in function %s:change the file name to %s\n", name, p->_funcname.c_str(), sNewFileName);
 		}
 
 #ifdef ZK
@@ -360,10 +360,10 @@ void Win_MoveFileAll_Ret(void* opaque)
 	}	
 	else
 	{
-		fprintf(hook_log, "========================\n");	//0528
-		//cout<<"no found target file"<<endl;
+		//fprintf(hook_log, "========================\n");	//0528
+		cout<<"no found target file"<<endl;
 	}	
-	fflush(hook_log);
+	//fflush(hook_log);
 	hookapi_remove_hook(p->_handle);
 	delete p;
 	p = NULL;

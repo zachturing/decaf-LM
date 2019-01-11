@@ -96,18 +96,20 @@ static void register_hooks(VMI_Callback_Params* params)
 
 static void createproc_callback(VMI_Callback_Params* params)
 {
+	DECAF_printf("process %s start.\n", params->cp.name);
 	if (strcasecmp(targetname, params->cp.name) == 0) 
 	{
 		targetpid = params->cp.pid; //获取目标进程的pid和cr3寄存器的值
 		targetcr3 = params->cp.cr3;
 		//DECAF_printf("Process found: pid=%d, cr3=%08x\n", targetpid, targetcr3);
 	}
-	register_hooks(params);  //注册需要hook的函数
+	//register_hooks(params);  //注册需要hook的函数
 }
 
 static void removeproc_callback(VMI_Callback_Params* params)
 {
-	//Stop the test when the monitored process terminates
+	//Stop the test when the monitored process terminatesi
+	DECAF_printf("process %s remove.\n", params->cp.name);
 }
 
 void plugin_cleanup()
