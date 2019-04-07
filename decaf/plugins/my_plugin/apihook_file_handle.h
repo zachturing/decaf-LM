@@ -4,7 +4,10 @@
 #include <fstream>
 #include <string>
 #include <iostream>
+#include <json/json.h>
 using namespace std;
+
+void addFunc(Json::Value &root, const string &procname, const Json::Value &func);
 
 void taint_file_flush(const vector<string> &target_file);
 void read_taint_file();

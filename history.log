@@ -1,0 +1,1000 @@
+ 1094  vim shared/hookapi.cpp 
+ 1095  make
+ 1096  cd ~
+ 1097  clear
+ 1098  ls
+ 1099  cd DECAF/
+ 1100  ls'
+ 1101  ;
+ 1102  '
+ 1103  clear
+ 1104  ls
+ 1105  git status
+ 1106  sudo apt-get install git
+ 1107  ls
+ 1108  git ini t
+ 1109  git init
+ 1110  ls -al
+ 1111  git pull https://github.com/zachturing
+ 1112  ssh-keygen -t rsa
+ 1113  la
+ 1114  ls -a
+ 1115  cd ..
+ 1116  ls
+ 1117  ls -al
+ 1118  cd .ssh/
+ 1119  clear
+ 1120  ls
+ 1121  more id_rsa.pub 
+ 1122  cd ..
+ 1123  cd DECAF/
+ 1124  clear
+ 1125  git status
+ 1126  git push origin master
+ 1127  ssh -T git@github.com
+ 1128  git remote -v
+ 1129  git remote add origin git@github.com:zachturing/decaf-LM.git
+ 1130  git config -global user.name "zachturing"
+ 1131  git config --global user.name "zachturing"
+ 1132  git config --global user.email "zach_turing@outlook.com"
+ 1133  git remote -v
+ 1134  git remote -d
+ 1135  git remote
+ 1136  git remote -v
+ 1137  git remote add my_decaf git@github.com:zachturing/decaf-LM.git
+ 1138  git remote -v
+ 1139  git status
+ 1140  git add *
+ 1141  git commit -m 'complete tainted info live-migration'
+ 1142  git status
+ 1143  git remote -v
+ 1144  git push my_decaf master
+ 1145  cd decaf/
+ 1146  ls core 
+ 1147  ll -h core 
+ 1148  rm core 
+ 1149  cd ..
+ 1150  git push my_decaf master
+ 1151  cd decaf/
+ 1152  ls
+ 1153  cd ~
+ 1154  clear
+ 1155  cd DECAF/
+ 1156  git status
+ 1157  find . -type f -size +1000000k
+ 1158  find . -size+100M
+ 1159  cd ~
+ 1160  ls
+ 1161  sz
+ 1162  sz WinSCP-5.13.2-Setup.exe testsocket.exe winxp_sp3.img xampp-win32-1.8.1-VC9-installer.exe 
+ 1163  cd ~
+ 1164  clear
+ 1165  ls
+ 1166  cd DECAF/
+ 1167  ls
+ 1168  clear
+ 1169  ls
+ 1170  find ./ -size +100000k -type f
+ 1171  find ./ -size +10k -type f
+ 1172  find ./ -size +10m -type f
+ 1173  find ./ -size +10M -type f
+ 1174  find ./ -size +10M -type f | ll -h
+ 1175  cd decaf/
+ 1176  clear
+ 1177  ls core
+ 1178  cd ..
+ 1179  cd decaf/plugins/
+ 1180  ls 
+ 1181  cd my_plugin/
+ 1182  ls
+ 1183  ls core
+ 1184  cd ..
+ 1185  cd shared/
+ 1186  ll
+ 1187  clear
+ 1188  ls core
+ 1189  cd tainting/
+ 1190  ls
+ 1191  cd ..
+ 1192  ls
+ 1193  cd ..
+ 1194  git remote -v
+ 1195  git remote add my_decaf
+ 1196  git push my_decaf master
+ 1197  ls
+ 1198  git status
+ 1199  git rm decaf/core 
+ 1200  git commit -m 'remove core file'
+ 1201  git push my_decaf master
+ 1202  git status
+ 1203  cd decaf/
+ 1204  make
+ 1205  ls
+ 1206  cd ..
+ 1207  ls
+ 1208  clear
+ 1209  git status
+ 1210  git log
+ 1211  git rm --cached 
+ 1212  git rm --cached decaf/core
+ 1213  git commit --amend -CHEAD
+ 1214  git push my_decaf master
+ 1215  reboot
+ 1216  sudo reboot
+ 1217  cd ~
+ 1218  clear
+ 1219  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 
+ 1220  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -tcp:0:7777
+ 1221  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:7777
+ 1222  cd ~
+ 1223  clear
+ 1224  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1225  ls
+ 1226  ls *log
+ 1227  ll *log
+ 1228  more hook_log 
+ 1229  cd tmp/
+ 1230  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1231  ls
+ 1232  cd ~
+ 1233  ls
+ 1234  cd DECAF/
+ 1235  ls
+ 1236  clear
+ 1237  git log
+ 1238  git reset --hard 07e284
+ 1239  cd decaf/plugins/
+ 1240  ls
+ 1241  cd my_plugin/
+ 1242  ls
+ 1243  ll
+ 1244  cd ..
+ 1245  ls
+ 1246  cd ..
+ 1247  git status
+ 1248  cd decaf/
+ 1249  ll core
+ 1250  cd ..
+ 1251  git push my_decaf master
+ 1252  cd ~
+ 1253  clear
+ 1254  cd DECAF/decaf/
+ 1255  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1256  clear
+ 1257  cd ~
+ 1258  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1259  clear
+ 1260  cd DECAF/decaf/
+ 1261  vim shared/tainting/taint_memory.h 
+ 1262  vim shared/tainting/taint_info.h 
+ 1263  vim shared/tainting/tainting.c 
+ 1264  vim taint_memory.c
+ 1265  vim shared/tainting/taint_memory.c
+ 1266  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1267  cd plugins/my_plugin/
+ 1268  ls
+ 1269  vim apihook_file_handle.cpp 
+ 1270  make clean
+ 1271  make
+ 1272  vim apihook_file_handle.cpp 
+ 1273  make
+ 1274  vim apihook_file_handle.cpp 
+ 1275  make
+ 1276  ./configure --decaf-path=/home/zk/DECAF/decaf
+ 1277  make
+ 1278  ls
+ 1279  pwd
+ 1280  clear
+ 1281  vim apihook_file_handle.cpp 
+ 1282  make
+ 1283  clear
+ 1284  ls
+ 1285  vim apihook_file_handle.cpp 
+ 1286  make clean
+ 1287  make
+ 1288  vim apihook_file_handle.cpp 
+ 1289  make clean
+ 1290  make
+ 1291  vim apihook_file_handle.cpp 
+ 1292  make clean
+ 1293  make
+ 1294  clear
+ 1295  cd ..
+ 1296  ls
+ 1297  clear
+ 1298  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1299  vim vl.c 
+ 1300  make
+ 1301  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1302  cd 0
+ 1303  cd -
+ 1304  cd my_plugin/
+ 1305  make clean
+ 1306  make
+ 1307  cd ..
+ 1308  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1309  cd plugins/
+ 1310  cd my_plugin/
+ 1311  clear
+ 1312  ls
+ 1313  vim apihook_file_handle.h 
+ 1314  vim targetfile_handle.cpp
+ 1315  ls
+ 1316  make clean
+ 1317  make
+ 1318  make clean
+ 1319  make
+ 1320  vim targetfile.txt
+ 1321  clear
+ 1322  ls
+ 1323  vim apihook_file_handle.cpp 
+ 1324  vim plugin.cpp 
+ 1325  vim apihook_file_handle.cpp 
+ 1326  vim plugin.cpp 
+ 1327  make clean
+ 1328  make
+ 1329  vim apihook_file_handle.cpp 
+ 1330  make clean
+ 1331  make
+ 1332  vim apihook_file_handle.cpp 
+ 1333  make
+ 1334  vim apihook_file_handle.h 
+ 1335  vim apihook_file_handle.cpp 
+ 1336  make clean
+ 1337  make
+ 1338  vim apihook_file_handle.cpp 
+ 1339  make clean
+ 1340  make
+ 1341  clear
+ 1342  cd ..
+ 1343  ls
+ 1344  clear
+ 1345  cd -
+ 1346  cd my_plugin/
+ 1347  ls
+ 1348  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1349  lsof -i:5903
+ 1350  lsof -i:5902
+ 1351  kill -9 23233
+ 1352  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1353  ls
+ 1354  ake
+ 1355  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1356  cd ~
+ 1357  ld
+ 1358  ls
+ 1359  clear
+ 1360  ls
+ 1361  cd DECAF/
+ 1362  ls
+ 1363  cd decaf/
+ 1364  cd plugins/
+ 1365  ls
+ 1366  cd ..
+ 1367  cd decaf/
+ 1368  vim vl.c 
+ 1369  cd ..
+ 1370  ls
+ 1371  git status
+ 1372  git log
+ 1373  git relog
+ 1374  git reflog
+ 1375  git reset --hard 93bd77a
+ 1376  cd decaf/
+ 1377  vim vl.c 
+ 1378  cd ..
+ 1379  clear
+ 1380  git reflog
+ 1381  clear
+ 1382  git status
+ 1383  rm decaf/core 
+ 1384  git status 
+ 1385  git rm decaf/core 
+ 1386  clear
+ 1387  git push my_decaf master
+ 1388  clear
+ 1389  ls
+ 1390  cd ..
+ 1391  ls
+ 1392  tar -czvf DECAF-LM-1210.tar.gz DECAF
+ 1393  clear
+ 1394  ls
+ 1395  cd DECAF/
+ 1396  ls -a
+ 1397  rm -rf .git/
+ 1398  ls
+ 1399  git init
+ 1400  gedit .git/config 
+ 1401  vim .git/config 
+ 1402  clear
+ 1403  git remote -v
+ 1404  git config --global user.name "zachturing"
+ 1405  git config --global user.email "zach_turing@outlook.com"
+ 1406  vim .git/config 
+ 1407  git remote add origin git@github.com:zachturing/decaf-LM.git
+ 1408  git remote -v
+ 1409  git status
+ 1410  ls
+ 1411  ls decaf/cor
+ 1412  ls decaf/cor*
+ 1413  git add .
+ 1414  git reflog 
+ 1415  git status
+ 1416  git commit -m 'taint info live migration completed'
+ 1417  git remote -v
+ 1418  git push origin master
+ 1419  cd decaf/plugins/
+ 1420  ls
+ 1421  cd ..
+ 1422  vim vl.c 
+ 1423  vim shared/hookapi.cpp 
+ 1424  cd ..
+ 1425  git branch -c dev
+ 1426  git checkout -b develop
+ 1427  git branche
+ 1428  git branch
+ 1429  ls
+ 1430  git checkout master 
+ 1431  cd decaf/
+ 1432  make
+ 1433  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -tcp:0:7777
+ 1434  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:7777
+ 1435  clear
+ 1436  ls
+ 1437  clear
+ 1438  cd ..
+ 1439  ls
+ 1440  git status
+ 1441  git add -u
+ 1442  git status
+ 1443  git add decaf/plugins/*
+ 1444  git add decaf/plugins/.
+ 1445  git status
+ 1446  cd decaf/plugins/
+ 1447  ls
+ 1448  git init
+ 1449  git status
+ 1450  ls -al
+ 1451  rm .git
+ 1452  rm -rf.git
+ 1453  rm -rf .git
+ 1454  git status
+ 1455  git rm -r --cached decaf/plugins
+ 1456  cd ..
+ 1457  git rm -r --cached decaf/plugins
+ 1458  git rm -r --cached ./plugins
+ 1459  cd ..
+ 1460  git status
+ 1461  git add decaf/plugins/
+ 1462  git status
+ 1463  git push origin master
+ 1464  git status
+ 1465  git commit -m 'add decaf/plugins
+ 1466  '
+ 1467  git status
+ 1468  git push origin master
+ 1469  cd decaf/plugins/
+ 1470  ls
+ 1471  clear
+ 1472  ls
+ 1473  cd decaf_big_plugin/
+ 1474  ls
+ 1475  ls -al
+ 1476  rm -rf .git/
+ 1477  git status
+ 1478  cd ..
+ 1479  git rm -r --cached decaf_big_plugin/
+ 1480  git add decaf_big_plugin/
+ 1481  git status
+ 1482  git commit -m 'add plugins/decaf_big_plugin'
+ 1483  git push origin master
+ 1484  clear
+ 1485  git branch -d develop 
+ 1486  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1487  cd ..
+ 1488  clear
+ 1489  git branch
+ 1490  git -b checkout develop
+ 1491  git checkout -b develop
+ 1492  git branch
+ 1493  clear
+ 1494  cd decaf/
+ 1495  vim savevm.c 
+ 1496  clear
+ 1497  cd plugins/
+ 1498  cd my_plugin/
+ 1499  ls
+ 1500  clear
+ 1501  ls
+ 1502  vim plugin.cpp 
+ 1503  git branch
+ 1504  cd ..
+ 1505  vim migration.c 
+ 1506  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1507  gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i386 
+ 1508  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1509  lsof -i:5903
+ 1510  kill -9 200147
+ 1511  kill -9 20014
+ 1512  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1513  vim vl.c
+ 1514  make
+ 1515  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1516  vim vl.c
+ 1517  make
+ 1518  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1519  vim vl.c
+ 1520  make
+ 1521  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1522  q
+ 1523  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1524  vim vl.c 
+ 1525  make
+ 1526  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1527  vim vl.c 
+ 1528  make
+ 1529  vim savevm.c 
+ 1530  vim shared/tainting/taint_info.h 
+ 1531  make
+ 1532  vim shared/tainting/taint_info.h 
+ 1533  vim savevm.c 
+ 1534  make
+ 1535  ll zk.h 
+ 1536  clear
+ 1537  ll zk.h 
+ 1538  vim savevm.c 
+ 1539  vim shared/tainting/taint_info.h 
+ 1540  vim savevm.c 
+ 1541  vim shared/tainting/taint_memory.h 
+ 1542  vim shared/tainting/taint_memory.c 
+ 1543  make
+ 1544  vim shared/tainting/taint_memory.c
+ 1545  make
+ 1546  vim shared/tainting/taint_info.h 
+ 1547  vim shared/tainting/taint_memory.c 
+ 1548  vim savevm.c 
+ 1549  make
+ 1550  vim savevm.c 
+ 1551  make
+ 1552  clear
+ 1553  ls
+ 1554  clear
+ 1555  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1556  vim /home/zk/DECAF/decaf/plugins/my_plugin/apihook_file_handle.cpp 
+ 1557  vim savevm.c
+ 1558  vim shared/tainting/taint_memory.c 
+ 1559  vim /home/zk/DECAF/decaf/plugins/my_plugin/apihook_file_handle.cpp 
+ 1560  make
+ 1561  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1562  vim plugins/my_plugin/apihook_file_handle.cpp 
+ 1563  vim vl.c 
+ 1564  vim savevm.c 
+ 1565  vim plugins/my_plugin/apihook_file_handle.cpp 
+ 1566  cd plugins/my_plugin/
+ 1567  make clean
+ 1568  make
+ 1569  cd ..
+ 1570  ls
+ 1571  clear
+ 1572  make
+ 1573  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1574  vim savevm.c 
+ 1575  vim plugins/my_plugin/apihook_file_handle.cpp 
+ 1576  make
+ 1577  vim savevm.c 
+ 1578  make
+ 1579  vim savevm.c 
+ 1580  make
+ 1581  clear
+ 1582  cd plugins/my_plugin/
+ 1583  ls
+ 1584  rm targetfile.txt 
+ 1585  vim taintfile.txt
+ 1586  vim plugin.cpp 
+ 1587  vim apihook_file_handle.h 
+ 1588  make clean
+ 1589  make
+ 1590  clear
+ 1591  cd ..
+ 1592  vim savevm.c 
+ 1593  make
+ 1594  vim savevm.c 
+ 1595  make
+ 1596  vim savevm.c 
+ 1597  make
+ 1598  vim savevm.c 
+ 1599  make
+ 1600  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1601  cd plugins/my_plugin/
+ 1602  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1603  ls
+ 1604  vim plugin.cpp 
+ 1605  make
+ 1606  make 
+ 1607  cd ~
+ 1608  cd DECAF/decaf/
+ 1609  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 
+ 1610  make
+ 1611  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 
+ 1612  lsof -i:5903
+ 1613  kill -9 24293
+ 1614  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 
+ 1615  cd ~
+ 1616  clear
+ 1617  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1618  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1619  cd DECAF/decaf/plugins/my_plugin/
+ 1620  ls
+ 1621  more taintfile.txt 
+ 1622  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1623  cd ~
+ 1624  lsof -i:5903
+ 1625  kill -9 24301
+ 1626  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1627  cd DECAF/decaf/
+ 1628  vim savevm.c
+ 1629  make
+ 1630  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1631  vim savevm.c 
+ 1632  make
+ 1633  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1634  cd ~
+ 1635  clear
+ 1636  cd DECAF/decaf/plugins/
+ 1637  ls
+ 1638  cd my_plugin/
+ 1639  ls
+ 1640  make
+ 1641  ls
+ 1642  ulimit -a
+ 1643  ulimit -c unlimited
+ 1644  ulimit -c
+ 1645  ulimit -a
+ 1646  ls
+ 1647  vim plugin.cpp 
+ 1648  vim apihook_file_handle.cpp 
+ 1649  make clean
+ 1650  make
+ 1651  vim taintfile.txt 
+ 1652  cat taintfile.txt 
+ 1653  make clean
+ 1654  make
+ 1655  make clean
+ 1656  make
+ 1657  ls
+ 1658  cat taintfile.txt 
+ 1659  make clean
+ 1660  make
+ 1661  ls
+ 1662  make clean
+ 1663  make
+ 1664  cd ~
+ 1665  clear
+ 1666  ls
+ 1667  cd DECAF/decaf/
+ 1668  clear
+ 1669  vim savevm.c 
+ 1670  make
+ 1671  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1672  make
+ 1673  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1674  make
+ 1675  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1676  clear
+ 1677  make
+ 1678  make 
+ 1679  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1680  make
+ 1681  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1682  lsof -i:5903
+ 1683  kill -9 27295
+ 1684  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1685  make
+ 1686  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1687  make
+ 1688  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1689  cd ~
+ 1690  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1691  cd DECAF/decaf/plugins/my_plugin/
+ 1692  ls
+ 1693  clear
+ 1694  make clean
+ 1695  make
+ 1696  cat taintfile.txt 
+ 1697  make 
+ 1698  vim taintfile.txt 
+ 1699  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1700  make
+ 1701  vim taintfile.txt 
+ 1702  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1703  ls
+ 1704  vim taintfile1.txt 
+ 1705  cat taintfile1.txt 
+ 1706  cat taintfile.txt 
+ 1707  make clean
+ 1708  make
+ 1709  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1710  XshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshell
+ 1711  cat taintfile.txt 
+ 1712  cat taintfile1.txt 
+ 1713  XshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshell
+ 1714  more taintfile1.txt 
+ 1715  ll -h taintfile*
+ 1716  make clean
+ 1717  make
+ 1718  vim taintfile.txt 
+ 1719  make
+ 1720  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1721  XshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshell
+ 1722  ll -h taintfile1.txt 
+ 1723  clear
+ 1724  cat taintfile.txt 
+ 1725  make 
+ 1726  cat taintfile
+ 1727  cat taintfile.txt 
+ 1728  make
+ 1729  ls -l taintfile.txt 
+ 1730  more taintfile.txt 
+ 1731  make
+ 1732  vim taintfile.txt 
+ 1733  cat taintfile.txt 
+ 1734  clear
+ 1735  vim taintfile.txt 
+ 1736  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1737  XshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshellXshell
+ 1738  vim taintfile.txt 
+ 1739  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1740  ls
+ 1741  cat taintfile1.txt 
+ 1742  vim taintfile.txt 
+ 1743  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1744  cat taintfile1.txt 
+ 1745  cat taintfile.txt 
+ 1746  cd ~
+ 1747  clear
+ 1748  cd DECAF/decaf/plugins/my_plugin/
+ 1749  ls
+ 1750  clear
+ 1751  cat taintfile.txt 
+ 1752  cat taintfile1.txt 
+ 1753  clear
+ 1754  git status
+ 1755  vim taintfile.txt 
+ 1756  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1757  cd ~
+ 1758  clear
+ 1759  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1760  cd ~
+ 1761  clear
+ 1762  clear
+ 1763  cd ~
+ 1764  clear
+ 1765  lks
+ 1766  ks
+ 1767  ls
+ 1768  cd ~
+ 1769  ls
+ 1770  clear
+ 1771  ls
+ 1772  cd DECAF/decaf/i386-softmmu/
+ 1773  ls
+ 1774  cd ..
+ 1775  gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i386 ~/WinXP_clean_snapshot.qcow2
+ 1776  clear
+ 1777  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1778  cd DECAF/decaf/
+ 1779  clear
+ 1780  vim main-loop.c 
+ 1781  vim vl.c
+ 1782  clear
+ 1783  cd ~
+ 1784  ls
+ 1785  cd DECAF/decaf/
+ 1786  clear
+ 1787  vim vl.c 
+ 1788  make
+ 1789  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1790  cd ~
+ 1791  clear
+ 1792  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1793  cd ~
+ 1794  clear
+ 1795  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1796  cd DECAF/decaf/
+ 1797  clear
+ 1798  vim vl.c 
+ 1799  make
+ 1800  clear
+ 1801  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1802  lsof -i:5903
+ 1803  kill -9 50388
+ 1804  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1805  cd plugins/my_plugin/
+ 1806  clear
+ 1807  ls
+ 1808  ll -h *log
+ 1809  more hook_log 
+ 1810  vim apihook_file_handle.
+ 1811  vim apihook_file_handle.cpp 
+ 1812  make clean
+ 1813  make
+ 1814  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1815  cd ~
+ 1816  clear
+ 1817  ls
+ 1818  cat hook_log 
+ 1819  cd DECAF/decaf/plugins/my_plugin/
+ 1820  ls
+ 1821  clear
+ 1822  ll -h *log
+ 1823  vim taintfile.txt 
+ 1824  ll -h *log
+ 1825  ls
+ 1826  cat hook_log 
+ 1827  ls
+ 1828  rm core 
+ 1829  git status
+ 1830  git log
+ 1831  git status
+ 1832  git checkout master 
+ 1833  git merge develop 
+ 1834  ls
+ 1835  git branch
+ 1836  vim apihook_file_handle.
+ 1837  vim apihook_file_handle.cpp 
+ 1838  git push
+ 1839  git remote -v
+ 1840  git push origin master 
+ 1841  ls
+ 1842  vim apihook_file_handle.cpp 
+ 1843  git status
+ 1844  git branch
+ 1845  clear
+ 1846  git push origin master 
+ 1847  vim apihook_file_handle.cpp 
+ 1848  git push -u origin master
+ 1849  git remote origin
+ 1850  git remote -v
+ 1851  git status
+ 1852  git log
+ 1853  git commit -m 
+ 1854  git log
+ 1855  git commit -m 'complete taint fiel transfer2.0'
+ 1856  git status
+ 1857  git log 
+ 1858  git checkout develop 
+ 1859  git status
+ 1860  git checkout master 
+ 1861  git add -u
+ 1862  git add .
+ 1863  git status
+ 1864  git add -u
+ 1865  git status
+ 1866  git commit -m 'complete taint file transfer2.0'
+ 1867  git status
+ 1868  git push origin master 
+ 1869  git branch -r
+ 1870  git branch -a
+ 1871  git push origin develop 
+ 1872  git remote -v
+ 1873  git branch 
+ 1874  git checkout develop 
+ 1875  clear
+ 1876  git status
+ 1877  vim apihook_file_handle.cpp 
+ 1878  git log
+ 1879  git checkout master 
+ 1880  vim apihook_file_handle.cpp 
+ 1881  clear
+ 1882  ls
+ 1883  git checkout develop 
+ 1884  ls
+ 1885  vim apihook_file_handle.cpp 
+ 1886  git log
+ 1887  git checkout master 
+ 1888  git log
+ 1889  git checkout develop 
+ 1890  git log 
+ 1891  git reset --hard HEAD^
+ 1892  git log
+ 1893  vim apihook_file_handle.cpp 
+ 1894  git checkout master 
+ 1895  vim apihook_file_handle.cpp 
+ 1896  git branch -d develop 
+ 1897  git checkout -b dev
+ 1898  git branch 
+ 1899  vim apihook_file_handle.
+ 1900  vim apihook_file_handle.cpp 
+ 1901  git branch -d dev
+ 1902  git checkout master 
+ 1903  git branch -d dev 
+ 1904  git checkout -b develop
+ 1905  git branch
+ 1906  git push origin develop 
+ 1907  cd ..
+ 1908  git branch 
+ 1909  git status
+ 1910  clear
+ 1911  ls
+ 1912  clear
+ 1913  vim migration.c 
+ 1914  make
+ 1915  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1916  vim migration.c 
+ 1917  vim migration-tcp.c 
+ 1918  vim migration.c 
+ 1919  make
+ 1920  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1921  vim migration.c 
+ 1922  v
+ 1923  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1924  vim migration.c 
+ 1925  make
+ 1926  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1927  vim migration.c 
+ 1928  cd ~
+ 1929  ls
+ 1930  cd DECAF/
+ 1931  git branch
+ 1932  git status
+ 1933  git add decaf/*
+ 1934  git status
+ 1935  git add decaf/plugins/hook_log decaf/plugins/my_plugin/taintfile.txt 
+ 1936  git add decaf/plugins/my_plugin/taintfile1.txt guest.log 
+ 1937  git status
+ 1938  ls
+ 1939  git commit -m
+ 1940  git commit -m 'complete taint file transfer'
+ 1941  clear
+ 1942  cd decaf/plugins/my_plugin/
+ 1943  ls
+ 1944  cat taintfile.txt 
+ 1945  vim taintfile.txt 
+ 1946  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1947  vim taintfile.txt 
+ 1948  clear
+ 1949  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1950  ls
+ 1951  more taintfile1.txt 
+ 1952  clear
+ 1953  ls
+ 1954  ulimit  -a
+ 1955  fsadsa
+ 1956  ulimit -c unlimited
+ 1957  ulimit -a
+ 1958  clear
+ 1959  vim taintfile.txt 
+ 1960  ulimit  -a
+ 1961  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :2 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2 -incoming tcp:0:6666
+ 1962  ls
+ 1963  ls -lh core 
+ 1964  gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i386 core
+ 1965  cd ~
+ 1966  clear
+ 1967  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1968  ulimit -c
+ 1969* gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i3
+ 1970  gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i386 
+ 1971  clear
+ 1972  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1973  clear
+ 1974  ls
+ 1975  ulimit -c
+ 1976  ulimit -c unlimited
+ 1977  ulimit -c
+ 1978  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1979  ls
+ 1980  ls -h core 
+ 1981  ll -h core 
+ 1982  gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i386 core 
+ 1983  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1984  ls
+ 1985  cp core CORE/core_decaf_test_vmstart
+ 1986  rm core 
+ 1987  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1988  lsof -i:5903
+ 1989  kill -9 54239
+ 1990  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1991  lsof -i:5903
+ 1992  kill -9 54249
+ 1993  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 1994  la
+ 1995  cd go/
+ 1996  clear
+ 1997  ls
+ 1998  vim test.go 
+ 1999  go run test.go 
+ 2000  vim test.go 
+ 2001  go run test.go 
+ 2002  vim test.go 
+ 2003  go run test.go 
+ 2004  ls
+ 2005  cd ..
+ 2006  clear
+ 2007  ls
+ 2008  cd CORE/
+ 2009  ls
+ 2010  clear
+ 2011  ls
+ 2012  gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i386 core_decaf_test_vmstart
+ 2013  ulimit -a
+ 2014  clear
+ 2015  gdb ~/DECAF/decaf/i386-softmmu/qemu-system-i386 core 
+ 2016  ls
+ 2017  rm core*
+ 2018  ls
+ 2019  cear
+ 2020  clear
+ 2021  ls
+ 2022  cd ..
+ 2023  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 2024  lsof -i:5903
+ 2025  kill -9 57628
+ 2026  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 2027  ls
+ 2028  gdb DECAF/decaf/i386-softmmu/qemu-system-i386 core 
+ 2029  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 2030  q
+ 2031  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 2032  clear
+ 2033  ls
+ 2034  sz rename_filename.exe 
+ 2035  cat /etc/issue
+ 2036  clear
+ 2037  ls
+ 2038  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 2039  q
+ 2040  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 2041  lsof -i:5903
+ 2042  kill -9 59562
+ 2043  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 2044  lsof -i:5903
+ 2045  kill -9 59574
+ 2046  clear
+ 2047  ~/DECAF/decaf/i386-softmmu/qemu-system-i386 -monitor stdio -m 2048 -usbdevice tablet -vnc :3 -netdev user,id=mynet -device ne2k_pci,netdev=mynet ~/WinXP_clean_snapshot.qcow2
+ 2048  ls
+ 2049  vim DECAF/decaf/block/iscsi.c 
+ 2050  sudo find / -name 'iscsi*'
+ 2051  ping 180
+ 2052  ping 180.76.232.27
+ 2053  cd DECAF/decaf/plugins/my_plugin/
+ 2054  ls
+ 2055  vim taintfile.txt 
+ 2056  ls
+ 2057  cat taintfile*
+ 2058  rm taintfile1.txt 
+ 2059  ls
+ 2060  clear
+ 2061  cd ..
+ 2062  ls
+ 2063  clear
+ 2064  vim savevm.c
+ 2065  git log
+ 2066  git reset --hard eed9a1
+ 2067  git log
+ 2068  git reset --hard ac1347
+ 2069  ls
+ 2070  vim savevm.c 
+ 2071  ls
+ 2072  git branch
+ 2073  git log
+ 2074  git checkout master
+ 2075  git log
+ 2076  cd ~
+ 2077  ls
+ 2078  cd decaf_backup/
+ 2079  ls
+ 2080  ll -h
+ 2081  cd ..
+ 2082  clear
+ 2083  ls
+ 2084  rm CentOS-6.3-*
+ 2085  ls
+ 2086  clear
+ 2087  ls
+ 2088  cd DECAF/
+ 2089  ls
+ 2090  git branch
+ 2091  git checkout develop 
+ 2092  ls
+ 2093  history > history.log

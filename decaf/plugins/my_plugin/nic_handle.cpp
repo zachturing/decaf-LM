@@ -18,6 +18,8 @@
 #include <map>
 #include <string>
 #include <vector>
+#include <json/json.h>
+
 using namespace std;
 
 #include "DECAF_main.h"
@@ -35,12 +37,34 @@ using namespace std;
 #include "config.h"
 
 #include "nic_handle.h"
-
+#include "apihook_file_handle.h"
+extern Json::Value root;
+extern uint32_t targetpid;
+extern uint32_t targetcr3;
+extern char targetname[512];
+extern uint32_t timestamp;
 extern vector<string> vTargetFile;
 extern DECAF_Handle nic_rec_cb_handle;
 extern DECAF_Handle nic_send_cb_handle;
 extern FILE *nic_log;
+extern void addFunc(Json::Value &root, const string &procname, const Json::Value &func);
 
+/*static void addFunc(Json::Value &root, const string &procname, const Json::Value &func)
+{
+        int size = root["taint_propagation"]["proc"].size();
+        for(int i = 0; i < size; ++i)
+        {
+                //strcasecmp()
+                if(procname == root["taint_propagation"]["proc"][i]["@procname"].asString())
+                {
+                        Json::Value tmp = root["taint_propagation"]["proc"][i];
+                        tmp["func"].append(func);
+                        root["taint_propagation"]["proc"][i] = tmp;
+                        break;
+                }
+        }
+}
+*/
 static int nic_check_virtmem(const uint32_t addr, const int size)
 {
 	uint8_t *taint_flag = new uint8_t[size];
@@ -89,6 +113,17 @@ void tracing_nic_recv(DECAF_Callback_Params* params)
 
 void tracing_nic_send(DECAF_Callback_Params* params)
 {
+	uint32_t eip = DECAF_getPC(cpu_single_env);
+    uint32_t cr3 = DECAF_getPGD(cpu_single_env);
+    char name[128];
+    tmodinfo_t dm;
+    if(VMI_locate_module_c(eip, cr3, name, &dm) == -1)
+    {
+        strcpy(name, "<None>");
+        bzero(&dm, sizeof(dm));
+    }
+
+
 	//DECAF_printf("tracing_nic_send:\n");
 	uint32_t addr = params->ns.addr;
 	int size = params->ns.size;
@@ -116,6 +151,7 @@ void tracing_nic_send(DECAF_Callback_Params* params)
 		//DECAF_printf("the upper layer isn't IP protocol.\n");
 		return;
 	}
+
 
 	struct ip *iph = (struct ip *)(buf + 14);
 	if( (iph->ip_p != 6) && (iph->ip_p != 17) )   // Ignore non TCP/UDP segments
@@ -172,6 +208,7 @@ void tracing_nic_send(DECAF_Callback_Params* params)
 					++tainted_bytes;    						//统计污点内存字节数
 				}
 			}
+
 			/*   //这里是输出所有数据
 			int i = 0;
 			for(; i < iDataLen; ++i)
@@ -193,6 +230,27 @@ void tracing_nic_send(DECAF_Callback_Params* params)
 				}				
 				fprintf(nic_log, "\n");
 				fprintf(nic_log, "send tainted bytes is %d.\n\n", tainted_bytes);
+			    
+                Json::Value proc;
+                proc["@procname"] = targetname;
+                proc["@pid"] = targetpid;
+                proc["@cr3"] = targetcr3;
+                proc["@timestamp"] = timestamp;
+                Json::Value period;
+                period["taint_leak"]["proc"].append(proc);
+
+				Json::Value funcInfo;
+                funcInfo["type"] = string("taint_leak");
+				funcInfo["op_type"] = "socket";
+				funcInfo["func_name"] = "send";
+				funcInfo["proto_type"] = "TCP";
+				funcInfo["source_ip"] = string(ip_src);
+				funcInfo["source_port"] = sport;
+				funcInfo["dest_ip"] = string(ip_dst);
+				funcInfo["dest_port"] = dport;
+				funcInfo["tainted_bytes"] = tainted_bytes;
+				//cout<<funcInfo.asString()<<endl;
+				addFunc(root, name, funcInfo);
 			}
 			delete[] taint_flag;   //以免发生内存泄露
 		}		
@@ -252,6 +310,18 @@ void tracing_nic_send(DECAF_Callback_Params* params)
 				}				
 				fprintf(nic_log, "\n");
 				fprintf(nic_log, "send tainted bytes is %d.\n\n", tainted_bytes);
+			
+				Json::Value funcInfo;
+				funcInfo["op_type"] = "socket";
+				funcInfo["func_name"] = "send";
+				funcInfo["proto_type"] = "UDP";
+				funcInfo["source_ip"] = string(ip_src);
+				funcInfo["source_port"] = sport;
+				funcInfo["dest_ip"] = string(ip_dst);
+				funcInfo["dest_port"] = dport;
+				funcInfo["tainted_bytes"] = tainted_bytes;
+				addFunc(root, name, funcInfo);
+				
 			}			
 			delete[] taint_flag; 
 		}		

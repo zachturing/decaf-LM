@@ -81,11 +81,14 @@ void do_enable_nic(Monitor *mon)
      * 注册网络发送/接收回调函数
      */
 	nic_rec_cb_handle   = DECAF_register_callback(DECAF_NIC_REC_CB , tracing_nic_recv, NULL);
+        
 	nic_send_cb_handle  = DECAF_register_callback(DECAF_NIC_SEND_CB, tracing_nic_send, NULL);
+	
 	if ((DECAF_NULL_HANDLE == nic_rec_cb_handle) || (DECAF_NULL_HANDLE == nic_send_cb_handle)) 
 	{
 		DECAF_printf("Could not register for the rec or send events\n");
 	}
+	DECAF_printf("register nic recv/send success.\n");
 }
 
 void do_disable_nic(Monitor *mon)

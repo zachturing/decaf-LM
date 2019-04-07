@@ -29,6 +29,8 @@ static plugin_interface_t plugin_interface;
 #include <map>
 #include <vector>
 #include <algorithm>
+#include <json/json.h>
+#include <ctime>
 
 #include "nic_handle.h"			 //网络回调处理函数
 #include "cmd_handle.h"  		 //命令处理函数
@@ -54,19 +56,30 @@ DECAF_Handle handle_write_taint_mem = DECAF_NULL_HANDLE;
 DECAF_Handle handle_read_taint_mem  = DECAF_NULL_HANDLE;
 DECAF_Handle handle_block_end_cb    = DECAF_NULL_HANDLE;
 
-static uint32_t targetpid = -1;
-static uint32_t targetcr3 = 0;
-
+uint32_t targetpid = -1;
+uint32_t targetcr3 = 0;
 char targetname[512];
+uint32_t timestamp = 0;
 
 map<uint32_t, string> file_map;		//在文件句柄和文件名之间建立对应关系
 vector<string> vTargetFile;  		//存放要监控的文件名
+
+Json::Value root;                     //
+//Json::Value proc;
+//Json::Value func;
+
 
 //存放日志文件的文件指针
 FILE *keylogger_log    = DECAF_NULL_HANDLE;
 FILE *nic_log          = DECAF_NULL_HANDLE;
 FILE *stringsearch_log = DECAF_NULL_HANDLE;
 FILE *hook_log         = DECAF_NULL_HANDLE;
+
+int getTimeStamp()
+{
+	return static_cast<int>(time(NULL));
+}
+
 
 static void register_hooks(VMI_Callback_Params* params)
 {
@@ -97,19 +110,37 @@ static void register_hooks(VMI_Callback_Params* params)
 static void createproc_callback(VMI_Callback_Params* params)
 {
 	DECAF_printf("process %s start.\n", params->cp.name);
-	if (strcasecmp(targetname, params->cp.name) == 0) 
-	{
-		targetpid = params->cp.pid; //获取目标进程的pid和cr3寄存器的值
-		targetcr3 = params->cp.cr3;
-		//DECAF_printf("Process found: pid=%d, cr3=%08x\n", targetpid, targetcr3);
-	}
-	//register_hooks(params);  //注册需要hook的函数
+	strcpy(targetname, params->cp.name);
+//	targetname = params->cp.name;
+	targetpid = params->cp.pid;
+	targetcr3 = params->cp.cr3;
+    timestamp = getTimeStamp();
+//	if (strcasecmp(targetname, params->cp.name) == 0) 
+//	{
+//		targetpid = params->cp.pid; //获取目标进程的pid和cr3寄存器的值
+//		targetcr3 = params->cp.cr3;
+//		DECAF_printf("Process found: pid=%d, cr3=%08x\n", targetpid, targetcr3);
+//	        register_hooks(params);  //注册需要hook的函数
+//	}
+	register_hooks(params);  //注册需要hook的函数
+
+//	Json::Value proc;
+//	proc["@procname"] = string(params->cp.name);
+//	proc["@pid"] = params->cp.pid;
+//	proc["@cr3"] = params->cp.cr3;
+//	proc["@timestamp"] = getTimeStamp();
+  //      Json::Value period;
+//	period["taint_propagation"]["proc"].append(proc);
+//	root.append(period);
 }
 
 static void removeproc_callback(VMI_Callback_Params* params)
 {
 	//Stop the test when the monitored process terminatesi
 	DECAF_printf("process %s remove.\n", params->cp.name);
+
+	Json::StyledWriter sw;
+	cout<<sw.write(root)<<endl;
 }
 
 void plugin_cleanup()
@@ -154,8 +185,26 @@ static int my_plugin_init(void)
 	DECAF_printf("Hello World\n");
 	hook_log = fopen("hook_log", "w");
         
-    read_taint_file();  //从文件中读取敏感文件集        
- 
+        read_taint_file();  //从文件中读取敏感文件集        
+
+////////////json
+        Json::Value taint_source;
+        
+        taint_source["taint_type"] = "sensitive files";
+	
+	int i = 0;
+	for(; i < vTargetFile.size(); ++i)
+	{
+		taint_source["taint_source"].append(vTargetFile[i]);
+	}
+	Json::Value period;
+	period["taint_source"].append(taint_source);	
+ 	root.append(period);
+
+	Json::StyledWriter sw;
+	cout<<sw.write(root)<<endl;
+////////////////////
+
 	if(!hook_log)
 	{
 		DECAF_printf("the hook_log can not be open or created !!.\n");
@@ -173,7 +222,7 @@ static int my_plugin_init(void)
 
 plugin_interface_t* init_plugin(void) 
 {
-	plugin_interface.mon_cmds = plugin_term_cmds;
+        plugin_interface.mon_cmds = plugin_term_cmds;
 	plugin_interface.plugin_cleanup = &plugin_cleanup;
 
 	my_plugin_init();

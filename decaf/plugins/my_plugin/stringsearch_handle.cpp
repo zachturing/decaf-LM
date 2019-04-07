@@ -50,7 +50,12 @@ struct string_pos
     uint32_t val[MAX_STRINGS];
     string_pos()
     {
-    	bzero(val, sizeof(val));
+        int i = 0;
+        for(; i < MAX_STRINGS; ++i)
+        {
+            val[i] = 0;
+        }
+    	//bzero(val, sizeof(val));
     }
 };
 
@@ -78,7 +83,7 @@ void stringsearch_cleanup()
 int mem_callback(void *buf, int size, bool is_write, int *pMatchLen)
 {  
 	//DECAF_printf("mem_callback.\n");
-	string_pos sp;   
+	string_pos sp;
 	int offset = -1;
 	for (unsigned int i = 0; i < size; i++)   //size为buf中的有效匹配长度
 	{
@@ -101,7 +106,15 @@ int mem_callback(void *buf, int size, bool is_write, int *pMatchLen)
                 fprintf(stringsearch_log, "%s Match of str %s\n", (is_write ? "WRITE" : "READ"), tofind[str_idx]);
                 //fprintf(stringsearch_log, "addr:0x%x\n", (uint8_t*)buf + i - strlens[str_idx] + 1);  //这里加1，原因在于i是从0开始的，或者说字符数组的下标是从0开始的
                 *pMatchLen = strlens[str_idx];   //记录当前匹配的字符串的长度
-                fprintf(stringsearch_log, "match string len is %d.\n", *pMatchLen);
+
+		int k = 0;
+		for(; k < *pMatchLen; ++k)
+		{
+                        printf("%d:%c--%d.\n", k, tofind[str_idx][k], tofind[str_idx][k]);
+			fprintf(stringsearch_log, "%c.", tofind[str_idx][k]);
+		}
+	
+                fprintf(stringsearch_log, "\n match string len is %d.\n", *pMatchLen);
 
                // int index = 1;
                // for(; index <= strlens[str_idx]; ++index)
@@ -158,9 +171,9 @@ bool parse_file(const char* stringsfile)
 				printf("%x", tofind[num_strings][i - 1]);
 				if(i >= MAX_STRLEN)
 				{
-                    printf("WARN: Reached max number of characters (%d) on string %d, truncating.\n", MAX_STRLEN, num_strings);
-                    break;
-                }                
+                                    printf("WARN: Reached max number of characters (%d) on string %d, truncating.\n", MAX_STRLEN, num_strings);
+                                    break;
+                                }                
 			}
 			strlens[num_strings] = i;
 			printf("\n");
@@ -205,6 +218,7 @@ void do_mem_read_cb(DECAF_Callback_Params *param)
 		if(strcmp(name, procname[i]) == 0)  //通过进程名进行过滤，说明触发此回调函数的进程是我们所关注的进程
 		{			
 			//DECAF_read_mem_with_pgd(cpu_single_env, cr3, param->mr.vaddr, MAX_SEARCH_LEN, (void*)buf);
+		//	DECAF_printf("process %s is searching.\n", name);	
 			CPUState *env = cpu_single_env ? cpu_single_env : first_cpu;
 			DECAF_physical_memory_rw(cpu_single_env, param->mr.paddr, (uint8_t*)buf, MAX_SEARCH_LEN, 0);
 
@@ -238,6 +252,7 @@ void do_mem_read_cb(DECAF_Callback_Params *param)
 	}
 }
 
+
 void do_mem_write_cb(DECAF_Callback_Params *param)
 {
 	//DECAF_printf("do_mem_write_cb.\n");
@@ -263,6 +278,7 @@ void do_mem_write_cb(DECAF_Callback_Params *param)
 	{ 
 		if(strcmp(name, procname[i]) == 0)  //说明触发此回调函数的进程是我们所关注的进程
 		{			
+			//DECAF_printf("process %s is searching.\n", name);	
 			//DECAF_read_mem_with_pgd(cpu_single_env, cr3, param->mr.vaddr, MAX_SEARCH_LEN, (void*)buf);
 			CPUState *env = cpu_single_env ? cpu_single_env : first_cpu;
 			DECAF_physical_memory_rw(cpu_single_env, param->mr.paddr, (uint8_t*)buf, MAX_SEARCH_LEN, 0);

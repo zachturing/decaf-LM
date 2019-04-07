@@ -16,7 +16,7 @@ CPP=g++
 CFLAGS=-Wall -O2 -g -fPIC -MMD 
 # CFLAGS=-Wall -g -fPIC 
 LDFLAGS=-g -shared 
-
+LIBS += -ljsoncpp
 OBJS=plugin.o
 
 #每次新增的
@@ -41,7 +41,7 @@ decaf:
 	$(CPP) $(CFLAGS) $(DEFINES) -c -o $@ $<
 
 plugin.so: $(SHARED_LIBS) $(OBJS) $(NEW_OBJS)
-	$(CPP) $(LDFLAGS) $^ -o $@ $(LIBS)
+	$(CPP) $(LDFLAGS) $^ -o $@ $(LIBS) 
 	ar cru libplugin.a $@
 
 plugin-static.so: $(OBJS)

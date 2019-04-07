@@ -23,11 +23,72 @@
 #include "apihook_file_handle.h"
 #include <map>
 #include <algorithm>
+#include <json/json.h>
 using namespace std;
+
+extern Json::Value root;                     //
+extern int getTimeStamp();
 
 extern map<uint32_t, string> file_map;
 extern vector<string> vTargetFile;
 extern FILE *hook_log;
+
+extern uint32_t targetpid;
+extern uint32_t targetcr3;
+extern char targetname[512];
+extern uint32_t timestamp;
+
+
+void addFunc(Json::Value &root, const string &procname, const Json::Value &func)
+{
+	int root_size = root.size();//如果两个同名的进程先后运行，则当前的func添加到后启动的进程中，所以index从root_size-1开始
+    string type = func["type"].asString();
+
+    int index = root_size - 1;
+    Json::Value item = root[index];
+    Json::Value::Members members = item.getMemberNames();
+    Json::Value::Members::iterator it = members.begin();
+    if(type == (*it)) //说明处于同一个阶段  source/propagation/leak   进一步判断是否属于同一个进程
+    {
+        int size = root[index][type]["proc"].size();
+        int i = 0;
+        for(; i < size; ++i)
+        {
+            //进一步判断是否属于同一个进程
+            if(procname == root[index][type]["proc"][i]["@procname"].asString())
+            {
+                Json::Value tmp = root[index][type]["proc"][i];
+                tmp["func"].append(func);
+                root[index][type]["proc"][i] = tmp;   //用增加了新函数调用日志的json对象替换原来的
+                return;
+            }
+        }
+                
+        if(i == size) //说明处于同一个阶段但是属于不同的进程，此时要将新进程添加进去
+        {
+            Json::Value proc;
+            proc["@procname"] = string(targetname);
+            proc["@pid"] = targetpid;
+            proc["@cr3"] = targetcr3;
+            proc["@timestamp"] = timestamp;
+            proc["func"].append(func);
+            root[index][type]["proc"].append(proc);
+        }
+    }
+    else  //不属于同一个阶段则直接新添加  
+    {
+        Json::Value proc;
+        proc["@procname"] = string(targetname);
+        proc["@pid"] = targetpid;
+        proc["@cr3"] = targetcr3;
+        proc["@timestamp"] = timestamp;
+        proc["func"].append(func);
+        
+        Json::Value period;
+        period[type]["proc"].append(proc);
+        root.append(period);
+    } 
+}
 
 void taint_file_flush(const vector<string> &target_file)
 {
@@ -184,9 +245,19 @@ void Win_ReadFile_Ret(void* params)
 	string sFileName = file_map[hfile];
 	uint32_t bytes_read = 0;
 	DECAF_read_mem(NULL, p->_stack[4], 4, &bytes_read);
-
+    DECAF_printf("=================================\n");
 	//fprintf(hook_log, "ReadFile: filename %s %d bytes.\n", sFileName.c_str(), bytes_read);
 	DECAF_printf("ReadFile: filename %s %d bytes.\n", sFileName.c_str(), bytes_read);
+	
+	uint32_t eip = DECAF_getPC(cpu_single_env);
+	uint32_t cr3 = DECAF_getPGD(cpu_single_env);
+	char name[128];
+	tmodinfo_t dm;
+	if(VMI_locate_module_c(eip, cr3, name, &dm) == -1)
+	{
+		strcpy(name, "<None>");
+		bzero(&dm, sizeof(dm));
+	}
 
 	for(vector<string>::iterator it = vTargetFile.begin(); it != vTargetFile.end(); ++it)
 	{
@@ -201,13 +272,32 @@ void Win_ReadFile_Ret(void* params)
 
 			int taint_bytes = check_virtmem(p->_stack[2], p->_stack[3]);
 			//fprintf(hook_log, "ReadFile: read content tainted %d bytes.\n", bytes_read); //0528
+	
+			if(0 != bytes_read)
+			{
+	 			Json::Value funcInfo;
+                funcInfo["type"] = string("taint_propagation");
+	            funcInfo["timestamp"] = getTimeStamp();		
+				funcInfo["call_addr"] = eip;
+				funcInfo["op_type"] = "file";
+				funcInfo["func_name"] = "ReadFile";
+				funcInfo["file_name"] = sFileName;
+				funcInfo["file_handle"] = hfile;
+				funcInfo["addr"] = p->_stack[2];   //buf
+				funcInfo["len"] = bytes_read;
+                cout<<funcInfo.toStyledString()<<endl;
+				addFunc(root, name, funcInfo);
+			}
 			
+
 			DECAF_printf("ReadFile: read content tainted %d bytes.\n", bytes_read);
+
 			break;
 		}
 	}
 	//fflush(hook_log);   //0528
 
+    DECAF_printf("=================================\n");
 	hookapi_remove_hook(p->_handle);
 	delete p;
 	p = NULL;
@@ -223,20 +313,29 @@ void Win_WriteFile_Ret(void* params)
 	CWriteFile *p = (CWriteFile*)params;
 	uint32_t hfile = p->_stack[1];
 	string sFileName = file_map[hfile];
-
+    DECAF_printf("=================================\n");
 	int taint_bytes = check_virtmem(p->_stack[2], p->_stack[3]);
 	if(taint_bytes <= 0)   //写入的内容中没有打上污点标签直接返回
 	{
 		return;
 	}
-	vector<string>::iterator it = find(vTargetFile.begin(), vTargetFile.end(), sFileName);
+
+    Json::Value funcInfo;
+    vector<string>::iterator it = find(vTargetFile.begin(), vTargetFile.end(), sFileName);
 	if(it == vTargetFile.end())  //如果被写入的文件中的内容没有打上污点标签而且还没放入监控文件队列中，将加入监控文件队列
 	{
 		vTargetFile.push_back(sFileName);
+        //污点数据被写入新文件中则表示发生泄漏
+        funcInfo["type"] = string("taint_leak");
 #ifdef ZK
-                taint_file_flush(vTargetFile);     
+        taint_file_flush(vTargetFile);     
 #endif /* ZK */	
-        }
+    }
+    else
+    {//如果污点数据还是被写入原来的文件，仍然是一次污点传播
+        funcInfo["type"] = string("taint_propagation");
+    }
+
 	uint32_t eip = DECAF_getPC(cpu_single_env);
 	uint32_t cr3 = DECAF_getPGD(cpu_single_env);
 	char name[128];
@@ -251,7 +350,20 @@ void Win_WriteFile_Ret(void* params)
 		//fprintf(hook_log, "Process %s WriteFile: filename=%s write %d bytes tainted memory!\n", name, sFileName.c_str(), taint_bytes);   //0528
 		//fflush(hook_log);		//0528
 		DECAF_printf("Process %s WriteFile: filename=%s write %d bytes tainted memory!\n", name, sFileName.c_str(), taint_bytes);
+				
+	    funcInfo["timestamp"] = getTimeStamp();		
+		funcInfo["call_addr"] = eip;
+		funcInfo["op_type"] = "file";
+		funcInfo["func_name"] = "WriteFile";
+		funcInfo["file_name"] = sFileName;
+		funcInfo["file_handle"] = hfile;
+		funcInfo["addr"] = p->_stack[2];   //buf
+		funcInfo["len"] = taint_bytes;
+	    cout<<funcInfo.toStyledString()<<endl;
+		addFunc(root, name, funcInfo);
+				
 	}
+    DECAF_printf("------------------------------\n");
 	hookapi_remove_hook(p->_handle);
 	delete p;
 	p = NULL;
@@ -306,10 +418,19 @@ void Win_MoveFileAll_Ret(void* opaque)
 	CMoveFile *p = (CMoveFile*)opaque;
 	char sExistingFileName[256];
 	char sNewFileName[256];
-	DECAF_read_mem(NULL, p->_stack[1], 256, sExistingFileName);
-	DECAF_read_mem(NULL, p->_stack[2], 256, sNewFileName);
-	
+	cout<<"========================================="<<endl;
 	DECAF_printf("%s\n", p->_funcname.c_str());
+	
+	if(p->_funcname.c_str() == string("MoveFileWithProgressW"))
+	{
+		guest_wstrncpy(sExistingFileName, 256, p->_stack[1]);
+		guest_wstrncpy(sNewFileName, 256, p->_stack[2]);
+	}
+    else
+	{
+		DECAF_read_mem(NULL, p->_stack[1], 256, sExistingFileName);
+		DECAF_read_mem(NULL, p->_stack[2], 256, sNewFileName);
+	}
 	//fprintf(hook_log, "Existing file name:%s\n", sExistingFileName);  //0528
 	//fprintf(hook_log, "New file name:%s\n", sNewFileName);			  //0528
 	DECAF_printf("Existing file name:%s\n", sExistingFileName);
@@ -342,21 +463,21 @@ void Win_MoveFileAll_Ret(void* opaque)
 		}
 
 #ifdef ZK
-               taint_file_flush(vTargetFile);
-               //int i = 0;
-               //for(; i < tf.mLen; ++i)
-               //{
-              //     if(strcmp(tf.mTaintFiles[i], sExistingFileName) == 0)
-               //    {
-               //        strcpy(tf.mTaintFiles[i], sNewFileName);
-                //       break;  
-                 //  }  
-              // }
+        taint_file_flush(vTargetFile);
+
+        Json::Value funcInfo;
+
+        funcInfo["type"] = string("taint_propagation");
+	    funcInfo["timestamp"] = getTimeStamp();		
+	    funcInfo["call_addr"] = eip;
+	    funcInfo["op_type"] = "file";
+	    funcInfo["func_name"] = "MoveFile";		
+        funcInfo["existing_filename"] = sExistingFileName;
+        funcInfo["new_filename"] = sNewFileName;
+	    cout<<funcInfo.toStyledString()<<endl;	
+		addFunc(root, name, funcInfo);
 
 #endif /* ZK */
-                
-//cout<<"================"<<endl;
-
 	}	
 	else
 	{
@@ -364,6 +485,7 @@ void Win_MoveFileAll_Ret(void* opaque)
 		cout<<"no found target file"<<endl;
 	}	
 	//fflush(hook_log);
+    cout<<"-------------------------------------------"<<endl;
 	hookapi_remove_hook(p->_handle);
 	delete p;
 	p = NULL;

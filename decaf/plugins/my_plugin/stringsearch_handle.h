@@ -5,7 +5,7 @@
 #define MAX_CALLERS 128
 #define MAX_STRLEN  1024
 
-#define MAX_SEARCH_LEN 2  //one page size: 4k = 4096bytes
+#define MAX_SEARCH_LEN 4  //one page size: 4k = 4096bytes
 #define STRING_LEN     9
 
 #define PROC_NUM 3
